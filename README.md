@@ -10,7 +10,73 @@
 
 ---
 
-[WIP](./.qiitask/todo.txt)
+## `qiitan` スクリプトの Hello World
+
+### スクリプトと実行例
+
+- スクリプト例（`./helloworld.qiitan`）
+    ```go
+    foo := import("fmt")
+    foo.println("Hello World!")
+    ```
+    - この qiitan スクリプトは、標準モジュール（`qiitan` インタプリタに同梱されているライブラリ）から `fmt` モジュールを `foo` に代入し、その `fmt` モジュール内で定義されている `println` 関数（改行付き `print` 関数）を呼び出して標準出力に出力しています。
+- 実行例
+    ```shellsession
+    $ qiitan ./helloworld.qiitan
+    Hello World!
+    ```
+
+### 対話モード（[REPL](https://ja.wikipedia.org/wiki/REPL)）での実行例
+
+```shellsession
+$ # 対話モード（REPL）で実行
+$ qiitan
+Welcome to Qiitan Script Interactive Mode! (To exit just type `bye`)
+> foo := import("fmt")
+LOG: {sprintf: <user-function>, __module_name__: "fmt", print: <user-function>, printf: <user-function>, println: <user-function>}
+> foo.println("Hello World!")
+Hello World!
+LOG: <undefined> object returned. Perhaps the statement has no return or nothing is assigned to it.
+>
+> bye
+Nice chatting with you. Thank you! Bye-bye~.
+$
+```
+
+対話モードでは、出力した内容および代入した内容が適宜表示されます。
+
+`foo := import("fmt")` で、`foo` 変数に `fmt` モジュールを代入していますが、その `fmt` モジュールには `print()`, `printf()`, `println()`, `sprintf()` が定義されていることが確認できます。
+
+```go
+LOG: {__module_name__: "fmt", print: <user-function>, printf: <user-function>, println: <user-function>, sprintf: <user-function>}
+```
+
+`foo.println("Hello World!")` で出力していますが、続く `LOG: <undefined> object returned` は、`fmt.println()` に戻り値がない（型がない値が返ってきた）ことを表しています。
+
+### プリ・コンパイルと実行
+
+キーたん語は、なんちゃってプリ・コンパイル型の言語です。
+
+`qiitan` スクリプトの実行だけでなく、その中間ファイル（バイトコード）を出力することができます。
+この中間ファイルも `qiitan` インタプリタで実行することができ、プリ・コンパイルが不要なぶんだけ速く実行されます。
+
+```shellsession
+$ qiitan -compile ./helloworld.qiitan
+compiled: ./helloworld.qtn
+
+$ qiitan ./helloworld.qtn
+Hello World!
+```
+
+## Install
+
+- [Homebrew](https://brew.sh/index_ja) (**macOS:** x86_64/Intel/AMD64, M1/ARM64, **Linux & Windows WSL2:** x86_64, ARM64, ARM v6)
+
+    ```bash
+    brew install qithub-bot/apps/qiitan
+    ```
+- 単体バイナリ（Windows, macOS, Linux）
+    - [Releases ページ](https://github.com/Qithub-BOT/Qiitan-go/releases/latest)から該当 OS + アーキテクチャをダウンロード。
 
 ---
 

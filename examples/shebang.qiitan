@@ -1,0 +1,9 @@
+#!/usr/bin/env qiitan
+
+// シバン付き Qiitan スクリプトの Hello, world サンプルです。
+//
+// このファイルに実行権限があり（`chmod +x ./shebang.qiitan`）、qiitan インタプ
+// リタにパスが通っていることが前提のサンプルです。
+
+fmt := import("fmt")
+fmt.println("Hello World!")
