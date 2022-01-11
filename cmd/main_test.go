@@ -9,18 +9,35 @@ import (
 )
 
 func Test_main(t *testing.T) {
+	// backup and defer restore
+	oldOsArgs := os.Args
+	oldVersionFlag := versionFlag
+
+	defer func() {
+		os.Args = oldOsArgs
+		versionFlag = oldVersionFlag
+	}()
+
+	// mock args
+	os.Args = []string{
+		t.Name(),
+	}
+
 	out := capturer.CaptureStdout(func() {
 		main()
 	})
 
-	assert.Equal(t, out, "Hello, Qiitan!\n")
+	assert.Equal(t, "Hello, Qiitan!\n", out)
 }
 
 func Test_version(t *testing.T) {
 	// backup and defer restore
 	oldOsArgs := os.Args
+	oldVersionFlag := versionFlag
+
 	defer func() {
 		os.Args = oldOsArgs
+		versionFlag = oldVersionFlag
 	}()
 
 	// mock args
@@ -33,18 +50,19 @@ func Test_version(t *testing.T) {
 		main()
 	})
 
-	assert.Contains(t, out, "cmd.test (devel)")
+	assert.Contains(t, out, "cmd")
+	assert.Contains(t, out, "(devel)")
 }
 
 func Test_version_defined(t *testing.T) {
 	// backup and defer restore
 	oldOsArgs := os.Args
+	oldVersionFlag := versionFlag
+	oldVersion := version
+
 	defer func() {
 		os.Args = oldOsArgs
-	}()
-
-	oldVersion := version
-	defer func() {
+		versionFlag = oldVersionFlag
 		version = oldVersion
 	}()
 
@@ -60,5 +78,6 @@ func Test_version_defined(t *testing.T) {
 		main()
 	})
 
-	assert.Contains(t, out, "cmd.test 0.0.0")
+	assert.Contains(t, out, "cmd")
+	assert.Contains(t, out, "0.0.0")
 }

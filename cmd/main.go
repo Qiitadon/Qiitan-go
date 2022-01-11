@@ -3,13 +3,16 @@ package main
 import (
 	"flag"
 	"fmt"
+	"path/filepath"
 	"runtime/debug"
 
 	"github.com/KEINOS/go-utiles/util"
 )
 
-var version string
-var versionFlag = flag.Bool("version", false, "show version")
+var (
+	version     string
+	versionFlag = flag.Bool("version", false, "show version")
+)
 
 func main() {
 	flag.Parse()
@@ -24,7 +27,7 @@ func main() {
 }
 
 func getVersion() string {
-	nameBin := util.GetNameBin()
+	nameBin := getNameFileWithoutExt(util.GetNameBin())
 	verBin := "(unknown)"
 
 	if version != "" {
@@ -34,4 +37,8 @@ func getVersion() string {
 	}
 
 	return fmt.Sprintf("%s %s", nameBin, verBin)
+}
+
+func getNameFileWithoutExt(pathFile string) string {
+	return filepath.Base(pathFile[:len(pathFile)-len(filepath.Ext(pathFile))])
 }

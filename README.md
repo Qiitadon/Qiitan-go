@@ -18,11 +18,12 @@
 
 このリポジトリでは、以下のような最低限のセキュリティ対策が施されています。
 
-[![go1.14+](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/go-versions.yml/badge.svg)](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/go-versions.yml "Unit Tests")
+[![go1.14+](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/go-versions.yml/badge.svg)](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/go-versions.yml "Unit Tests on Go 1.16, 17 and latest")
+[![Platform Tests](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/platform-test.yml/badge.svg)](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/platform-test.yml "Test on Win, macOS, Linux")
 [![golangci-lint](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/golangci-lint.yml "Static Analysis")
+[![CodeQL](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/codeQL-analysis.yml/badge.svg)](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/codeQL-analysis.yml "Vulnerability Scan")
 [![codecov](https://codecov.io/gh/Qithub-BOT/Qiitan-go/branch/main/graph/badge.svg?token=uW30s2bK8M)](https://codecov.io/gh/Qithub-BOT/Qiitan-go "Code Coverage")
 [![Go Report Card](https://goreportcard.com/badge/github.com/Qithub-BOT/Qiitan-go)](https://goreportcard.com/report/github.com/Qithub-BOT/Qiitan-go "Code Quality")
-[![CodeQL](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/codeQL-analysis.yml/badge.svg)](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/codeQL-analysis.yml "Vulnerability Scan")
 
 ## 言語開発（コントリビュート）
 
