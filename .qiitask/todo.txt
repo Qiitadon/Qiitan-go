@@ -1,0 +1,8 @@
+空のアプリ（HelloWorld）で Unit Test 環境の実装
+空のアプリ（HelloWorld）で CI およびリリースまでのフローを構築
+リリース時 brew tap リポジトリに push するための環境変数 PERSONAL_ACCESS_TOKEN のリポジトリ設定
+Homebrew でインストールできるようにする
+CodeCov へ、リポジトリ登録
+Mergify へ、リポジトリ登録
+x README.md の叩き台作成
+x LICENSE 作成（MIT, The Qiitan-go Contributors）
