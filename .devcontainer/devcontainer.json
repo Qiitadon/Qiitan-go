@@ -42,7 +42,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "cp -fr ./.vscode/extensions/vscode-qiitan-go/ ~/.vscode-server/extensions/vscode-qiitan-go/ && go mod download",
+	"postCreateCommand": "cp -fr ./.vscode/extensions/vscode-qiitan-go/ ~/.vscode-server/extensions/vscode-qiitan-go/ && git init ~/.vscode-server/extensions/vscode-qiitan-go && go mod download"
 
 	// Comment out to connect as root to debug container.
 	// "remoteUser": "root"

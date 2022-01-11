@@ -87,6 +87,6 @@ raw_url_decode()
 - `url_decode(s)`: returns the bytes represented by the url-base64 string s.
 - `url_encode(src)`: returns the url-base64 encoding of src.
 
-> [目次に戻る ↩️](../README.md)
+> [目次に戻る ↩️](../)
 
 ---

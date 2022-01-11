@@ -1,9 +1,17 @@
-Qiitan-go の本アプリの初回実装
-x 空のアプリ（HelloWorld）で Unit Test 環境の実装
-x 空のアプリ（HelloWorld）で CI およびリリースまでのフローを構築
-x リリース時 brew tap リポジトリに push するための環境変数 PERSONAL_ACCESS_TOKEN のリポジトリ設定
-x Mergify へ、リポジトリ登録
-x CodeCov へ、リポジトリ登録
-x Homebrew でインストールできるようにする
-x README.md の叩き台作成
-x LICENSE 作成（MIT, The Qiitan-go Contributors）
+インタプリタのコマンドを flag パッケージベースから Cobra に変更 +main
+/gen/gen_scrmods.go のカバレッジ
+SHA-3 および BLAKE3 の実装 +hash
+qiitan スクリプトのシンタックス・ハイライトの VSCode 拡張（/.vscode/extensions/)を個別リポジトリとして独立させる +vscode
+/examples を /docs に自動ドキュメント化を考える（go generate） +docs
+
+x 2021-01-12 /docs/README.md -> index.md に変更
+x 2021-01-11 Qiitan-go の本アプリの初回実装
+x 2021-01-11 空のアプリ（HelloWorld）で Unit Test 環境の実装
+x 2021-01-11 空のアプリ（HelloWorld）で CI およびリリースまでのフローを構築
+x 2021-01-11 リリース時 brew tap リポジトリに push するための環境変数 PERSONAL_ACCESS_TOKEN のリポジトリ設定
+x 2021-01-11 Mergify へ、リポジトリ登録
+x 2021-01-11 CodeCov へ、リポジトリ登録
+x 2021-01-11 Homebrew でインストールできるようにする
+x 2021-01-11 README.md の叩き台作成
+x 2021-01-11 LICENSE 作成（MIT, The Qiitan-go Contributors）
+x **この todo は todo.txt メソッドを使っています https://github.com/todotxt/todo.txt **

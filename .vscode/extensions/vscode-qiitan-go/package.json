@@ -1,0 +1,56 @@
+{
+  "name": "qiitan",
+  "displayName": "Qiitan Lang",
+  "description": "Qiitan script syntax highlighting",
+  "publisher": "KEINOS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KEINOS/vscode-qiitan-go"
+  },
+  "icon": "logo.png",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.62.2"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "qiitan",
+        "aliases": [
+          "Qiitan",
+          "qiitan"
+        ],
+        "extensions": [
+          ".qiitan"
+        ],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "tengo",
+        "aliases": [
+          "Tengo",
+          "tengo"
+        ],
+        "extensions": [
+          ".tengo"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "qiitan",
+        "scopeName": "source.qiitan",
+        "path": "./syntaxes/qiitan.tmLanguage.json"
+      },
+      {
+        "language": "tengo",
+        "scopeName": "source.qiitan",
+        "path": "./syntaxes/qiitan.tmLanguage.json"
+      }
+    ]
+  }
+}

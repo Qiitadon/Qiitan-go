@@ -34,7 +34,7 @@ result := hash.md5("Hello, Qiitan!=")
 // result: 82ed57a748cc18329b954105429f49f5
 ```
 
-> [目次に戻る ↩️](../README.md)
+> [目次に戻る ↩️](../)
 
 ---
 
@@ -52,7 +52,7 @@ result := hash.sha1("Hello, Qiitan!")
 // result: 2343d74f9436884f362d8a753fa11c153d80f0c9
 ```
 
-> [目次に戻る ↩️](../README.md)
+> [目次に戻る ↩️](../)
 
 ---
 
@@ -70,7 +70,7 @@ result := hash.sha224("Hello, Qiitan!")
 // result: cba7426676e50fe569b21c28aa2294893bfa03967ffb3601ab605f6c
 ```
 
-> [目次に戻る ↩️](../README.md)
+> [目次に戻る ↩️](../)
 
 ---
 
@@ -88,7 +88,7 @@ result := hash.sha256("Hello, Qiitan!")
 // result: fa7fcdc946b8a96ba78424293a0af52b2d60cfecd8de0e03857edd4a005147f1
 ```
 
-> [目次に戻る ↩️](../README.md)
+> [目次に戻る ↩️](../)
 
 ---
 
@@ -106,7 +106,7 @@ result := hash.sha384("Hello, Qiitan!")
 // result: aeab0e947bcdfe2ca2e1262453dd232dd55bc3c700e00a02a79cb032045be3ac9e5cd4e989416f14763d0283a773c5fd
 ```
 
-> [目次に戻る ↩️](../README.md)
+> [目次に戻る ↩️](../)
 
 ---
 
@@ -124,6 +124,6 @@ result := hash.sha512("Hello, Qiitan!")
 // result: 123163af3c5575310d56ca1cd7d8b6253f072f5ed554ec63659e8f7627359742e1b621cd3a10fb95e72ce03d2deacbb94efbc11db8768d394b6eadd1606203a2
 ```
 
-> [目次に戻る ↩️](../README.md)
+> [目次に戻る ↩️](../)
 
 ---

@@ -81,11 +81,11 @@ func TestCompileAndRun_error_compile(t *testing.T) {
 // 正常系ファイルのコンパイル済みファイル出力テスト。
 func TestCompileOnly_out_file(t *testing.T) {
 	// テスト用スクリプトの読み込みパス取得
-	nameFileScript := "helloworld.qiitan"
-	pathFileOrigin := getPathExample(t, nameFileScript)
+	nameFileScript := "hello_world.qiitan"
+	pathFileOrigin := getPathExample(t, "hello_world", nameFileScript)
 
-	// バイトデータの出力ファイル名
-	nameFileOut := "helloworld.qtn"
+	// バイトデータの出力ファイル名（期待するファイル名）
+	nameFileOut := "hello_world.qtn"
 
 	// コンパイラの生成
 	cpl := compiler.New()
@@ -151,8 +151,8 @@ func TestCompileOnly_bad_script(t *testing.T) {
 // バイトコード出力先のファイルオープンに失敗した時のテスト。
 func TestCompileOnly_fail_to_open_outfile(t *testing.T) {
 	// テスト用スクリプトの読み込みパス取得
-	nameFileScript := "helloworld.qiitan"
-	pathFileOrigin := getPathExample(t, nameFileScript)
+	nameFileScript := "hello_world.qiitan"
+	pathFileOrigin := getPathExample(t, "hello_world", nameFileScript)
 
 	// コンパイラの生成
 	cpl := compiler.New()
@@ -202,7 +202,7 @@ func TestCompileOnly_not_file(t *testing.T) {
 	cpl := compiler.New()
 
 	// テスト用スクリプトのパス取得
-	pathFileScript := getPathTestData(t, "helloworld.qiitan")
+	pathFileScript := getPathTestData(t, "hello_world.qiitan")
 
 	// コンパイルされてないデータの読み込み
 	byteData, err := cpl.ReadScript(pathFileScript)
@@ -323,8 +323,8 @@ func TestRunCompiled(t *testing.T) {
 	cpl := compiler.New()
 
 	// コンパイルされているデータの読み込み
-	inputFile := getPathTestData(t, "helloworld.qiitan")
-	outputFile := filepath.Join(t.TempDir(), "helloworld.qtn")
+	inputFile := getPathTestData(t, "hello_world.qiitan")
+	outputFile := filepath.Join(t.TempDir(), "hello_world.qtn")
 
 	inputData, err := cpl.ReadScript(inputFile)
 	require.NoError(t, err)
@@ -380,10 +380,13 @@ func TestRunCompiled_not_compiled(t *testing.T) {
 
 // ../../examples/ ディレクトリにあるファイルのパスを返します。ファイルが存在し
 // ない場合はテストはエラーで終了します。
-func getPathExample(t *testing.T, nameFile string) string {
+func getPathExample(t *testing.T, nameFile ...string) string {
 	t.Helper()
 
-	pathFile, err := filepath.Abs("../../examples/" + nameFile)
+	pathTmp := filepath.Join(nameFile...)
+	pathTmp = filepath.Join("../../examples/", pathTmp)
+
+	pathFile, err := filepath.Abs(pathTmp)
 	require.NoError(t, err)
 
 	return pathFile
@@ -391,10 +394,13 @@ func getPathExample(t *testing.T, nameFile string) string {
 
 // ../../testdata/ ディレクトリにあるファイルのパスを返します。ファイルが存在し
 // ない場合はテストはエラーで終了します。
-func getPathTestData(t *testing.T, nameFile string) string {
+func getPathTestData(t *testing.T, nameFile ...string) string {
 	t.Helper()
 
-	pathFile, err := filepath.Abs("../../testdata/" + nameFile)
+	pathTmp := filepath.Join(nameFile...)
+	pathTmp = filepath.Join("../../testdata/", pathTmp)
+
+	pathFile, err := filepath.Abs(pathTmp)
 	require.NoError(t, err)
 
 	return pathFile

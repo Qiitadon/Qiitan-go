@@ -1,7 +1,0 @@
-export {
-    foo: func(){return}
-}
-
-test := import("test")
-
-test.assertEqual("bar", foo("bar"))

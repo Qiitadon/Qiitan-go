@@ -23,7 +23,7 @@ func TestRun(t *testing.T) {
 	}()
 
 	// テスト用スクリプトのパス取得
-	pathFileScript, err := filepath.Abs("../examples/helloworld.qiitan")
+	pathFileScript, err := filepath.Abs("../examples/hello_world/hello_world.qiitan")
 	require.NoError(t, err)
 
 	out := capturer.CaptureStdout(func() {
@@ -48,7 +48,7 @@ func TestRun_compile(t *testing.T) {
 	}()
 
 	// テスト用スクリプトのパス取得
-	pathFileScript, err := filepath.Abs("../examples/helloworld.qiitan")
+	pathFileScript, err := filepath.Abs("../examples/hello_world/hello_world.qiitan")
 	require.NoError(t, err)
 
 	// コンパイル済みファイルの出力先
@@ -129,7 +129,7 @@ func TestRun_do_not_resolve_path_option(t *testing.T) {
 	}()
 
 	// テスト用スクリプトのパス取得
-	pathFileScript, err := filepath.Abs("../examples/helloworld.qiitan")
+	pathFileScript, err := filepath.Abs("../examples/hello_world/hello_world.qiitan")
 	require.NoError(t, err)
 
 	out := capturer.CaptureStdout(func() {
@@ -165,7 +165,7 @@ func TestRun_file_exists(t *testing.T) {
 	}
 
 	// テスト用スクリプトのパス取得
-	pathFileScript, err := filepath.Abs("../examples/helloworld.qiitan")
+	pathFileScript, err := filepath.Abs("../examples/hello_world/hello_world.qiitan")
 	require.NoError(t, err)
 
 	a, err := os.CreateTemp(t.TempDir(), "")
@@ -199,7 +199,7 @@ func TestRun_run_compiled(t *testing.T) {
 	}()
 
 	// テスト用コンパイル済みファイル
-	pathFileBin, err := filepath.Abs("../testdata/helloworld")
+	pathFileBin, err := filepath.Abs("../testdata/hello_world")
 	require.NoError(t, err)
 
 	out := capturer.CaptureStdout(func() {
@@ -222,7 +222,7 @@ func TestRun_shebang(t *testing.T) {
 	}()
 
 	// テスト用コンパイル済みファイル
-	pathFileBin, err := filepath.Abs("../examples/shebang.qiitan")
+	pathFileBin, err := filepath.Abs("../examples/shebang/shebang.qiitan")
 	require.NoError(t, err)
 
 	out := capturer.CaptureStdout(func() {

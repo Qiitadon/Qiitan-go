@@ -22,6 +22,3 @@ Tengo 言語で書かれたモジュールのファイル名は "scrmod_" では
     scrmod_<パッケージ名>.tengo
 */
 package modules
-
-//go:generate go run ../../gen/gen_scrmods/ -output "../../qiitan/modules/ModulesInScript.go"
-//go:generate go fmt ../../qiitan/modules/ModulesInScript.go

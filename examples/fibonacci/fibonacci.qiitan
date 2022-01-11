@@ -10,4 +10,4 @@ fib := func(x) {
 
 	return fib(x-1) + fib(x-2)
 }
-// Output: 9227465
+// fib: 9227465

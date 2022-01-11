@@ -1,12 +1,18 @@
 <!-- markdownlint-disable MD041 -->
+[![platform icon](https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qithub-BOT/Qiitan-go/releases/latest "view latest releases page")
+[![homebrew icon](https://img.shields.io/badge/homebrew-macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qithub-BOT/Qiitan-go#install "view latest releases page")
+[![MIT license](https://img.shields.io/github/license/Qithub-BOT/Qiitan-go)](https://github.com/Qithub-BOT/Qiitan-go/blob/main/LICENSE "view license page")
+
 # Qiitan-go<sub><sup><sup>alpha</sup></sup></sub>
 
-[キーたん語（Qiitan-go）](https://github.com/Qithub-BOT/Qiitan-go)は、Qiitan ファンの、Qiitan ファンによる、Qiitan ファンのための「お遊び用スクリプト言語」です。
+[キーたん語（Qiitan-go）](https://github.com/Qithub-BOT/Qiitan-go)は、[キーたん（Qiitan）](https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png) ファンの、Qiitan ファンによる、Qiitan ファンのための「お遊び用スクリプト言語」です。
 
-> Qiitan は、[Qiita](https://qiita.com/)<sup>™️</sup> の SNS である「[Qiitadon](https://qiitadon.com/)<sub><sup><sup>β</sup></sup></sub>」のマスコット・キャラクターです。
+---
+
+> <sub><sup>キーたん（Qiitan）は、[Qiita](https://qiita.com/)<sup>™️</sup> の SNS である「[Qiitadon](https://qiitadon.com/)<sub><sup><sup>β</sup></sup></sub>」のマスコット・キャラクターです。</sup></sub>
 >
-> - [キーたん（Qiitan）](https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png) @ Qiitadon
-> - `Qiitan-go` は Qiitan のファン・アプリであり、[Qiita](https://qiita.com/)<sup>™️</sup> とは一切関係がありません。
+> - <sub><sup>[キーたん（Qiitan）](https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png) @ Qiitadon</sup></sub>
+> - <sub><sup>`Qiitan-go` は Qiitan のファン・アプリであり、[Qiita](https://qiita.com/)<sup>™️</sup> とは一切関係がありません。</sup></sub>
 
 ---
 
@@ -26,8 +32,6 @@
     Hello World!
     ```
 
----
-
 ### 対話モード（[REPL](https://ja.wikipedia.org/wiki/REPL)）での実行例
 
 ```shellsession
@@ -45,7 +49,7 @@ Nice chatting with you. Thank you! Bye-bye~.
 $
 ```
 
-<details><summary>上記の簡易説明</summary>
+<details><summary>上記の簡易説明</summary><br>
 
 対話モードでは、出力した内容および代入した内容が適宜表示されます。
 
@@ -56,7 +60,7 @@ $
 LOG: {__module_name__: "fmt", print: <user-function>, printf: <user-function>, println: <user-function>, sprintf: <user-function>}
 ```
 
-次に `foo.println("Hello World!")` で出力していますが、続く `LOG: <undefined> object returned` は、`fmt.println()` に戻り値がなかった（型がない値が返ってきた）ことを表しています。
+次に `foo.println("Hello World!")` で標準出力に "`Hello World!`" を出力していますが、続く `LOG: <undefined> object returned` は、`fmt.println()` に戻り値がなかった（型がない値が返ってきた）ことを表しています。
 
 ```shellsession
 > foo.println("Hello World!")
@@ -69,8 +73,6 @@ LOG: <undefined> object returned. Perhaps the statement has no return or nothing
 ---
 
 </details>
-
----
 
 ### プリ・コンパイルと実行
 
@@ -86,6 +88,15 @@ compiled: ./helloworld.qtn
 $ qiitan ./helloworld.qtn
 Hello World!
 ```
+
+---
+
+## リソース
+
+- [`qiitan` スクリプトのサンプル集](./samples)
+- [`qiitan` スクリプトのドキュメント](https://qithub-bot.github.io/Qiitan-go/)
+
+---
 
 ## Install
 
@@ -110,21 +121,26 @@ Hello World!
 [![codecov](https://codecov.io/gh/Qithub-BOT/Qiitan-go/branch/main/graph/badge.svg?token=uW30s2bK8M)](https://codecov.io/gh/Qithub-BOT/Qiitan-go "Code Coverage")
 [![Go Report Card](https://goreportcard.com/badge/github.com/Qithub-BOT/Qiitan-go)](https://goreportcard.com/report/github.com/Qithub-BOT/Qiitan-go "Code Quality")
 
-## 言語開発（コントリビュート）
+---
+
+## 言語拡張開発（コントリビュート）
 
 [![go1.16+](https://img.shields.io/badge/Go-1.16+-blue?logo=go)](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/go-versions.yml "Supported versions")
 [![Go Reference](https://pkg.go.dev/badge/github.com/Qithub-BOT/Qiitan-go.svg)](https://pkg.go.dev/github.com/Qithub-BOT/Qiitan-go)
 
 - `qiitan` コマンド（インタプリタ）自体は Go 言語で開発されています。
-- スタンドアロン（単体）のバイナリとして動作するように設計されています。
-
-<!--
-- キーたん語（`qiitan` 語）は [Tengo 言語](https://github.com/d5/tengo)を独自のモジュールで拡張したものです。
-- `qiitan` スクリプトは `tengo` スクリプトの上位互換です。Tengo 言語で書かれた `tengo` スクリプトは `qiitan` インタープリタで実行できますが、`qiitan` スクリプトは Tengo のインタープリタでは実行できません。
--->
+- `qiitan` コマンド（インタプリタ）は、スタンドアロン（単体）のバイナリとして動作するように設計されています。
+- [CONTRIBUTING](./.github/CONTRIBUTING.md)
 
 ---
 
 ## License
 
-- [MIT](https://github.com/Qithub-BOT/Qiitan-go/LICENSE) License. Copyright (c) [The Qiitan-go Contributors](https://github.com/Qithub-BOT/Qiitan-go/graphs/contributors).
+- [MIT](https://github.com/Qithub-BOT/Qiitan-go/LICENSE) License.
+- Copyright: © 2022 [The Qiitan-go Contributors](https://github.com/Qithub-BOT/Qiitan-go/graphs/contributors).
+
+### 謝辞
+
+- `qiitan` スクリプトは [Tengo 言語](https://github.com/d5/tengo)をベースに拡張した上位互換言語です。
+- `qiitan` インタプリタは、以下の Go モジュールにお世話になっています。
+  - [go.mod](./go.mod)
