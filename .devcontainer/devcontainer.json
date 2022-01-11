@@ -11,7 +11,8 @@
 		"--rm",
 		"--cap-add=SYS_PTRACE",
 		"--security-opt",
-		"seccomp=unconfined"
+		"seccomp=unconfined",
+		"--env-file", "./.devcontainer/devcontainer.env"
 	],
 
 	// Set *default* container specific settings.json values on container create.
@@ -25,6 +26,10 @@
 				"path": "/bin/bash",
 				"args": []
 			}
+		},
+		"extensions.ignoreRecommendations": true,
+		"files.associations": {
+			"*.qiitan": "go"
 		}
 	},
 
@@ -37,7 +42,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "go mod download",
+	"postCreateCommand": "cp -fr ./.vscode/extensions/vscode-qiitan-go/ ~/.vscode-server/extensions/vscode-qiitan-go/ && go mod download",
 
 	// Comment out to connect as root to debug container.
 	// "remoteUser": "root"

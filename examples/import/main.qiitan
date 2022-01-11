@@ -1,0 +1,12 @@
+// ユーザ・モジュールの利用（外部パッケージの利用）
+//
+// 外部の qiitan スクリプト・ファイルをインポートして利用することができます。
+// import で使える関数や変数はインポート先で export されたもののみです。
+//
+// 以下は ./foo/foo.qiitan のパッケージを foo 変数に代入して、bar.qiitan 内で
+// export された関数を使う例です。
+fmt := import("fmt")
+foo := import("./foo/foo")
+
+piyo := foo.bar("fuga")
+fmt.println(piyo)

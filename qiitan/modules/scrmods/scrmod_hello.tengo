@@ -1,0 +1,28 @@
+// Module hello is a sample module written in Tengo language.
+
+// join is a private function that joins the args glued by a space.
+join := func(...args) {
+    text := import("text")
+
+    return text.join(args, " ")
+}
+
+// qiitan is defined as private but exported later.
+qiitan := func() {
+        return "Hi! How are you?"
+}
+
+// Export functions as public.
+export {
+    // world functions returns a formatted string including the givn args as
+    // "Hello, <arg> <arg>...!".
+    world: func(...args) {
+
+        who := join(args...) // pass all the args through
+
+        return "Hello, " + who + "!"
+    },
+
+    // qiitan fuction returns a greeting message. Which was defined previously.
+    qiitan: qiitan
+}

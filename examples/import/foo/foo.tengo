@@ -1,0 +1,8 @@
+// buzz は外部から直接参照できない
+buzz := "mogera"
+
+export {
+    bar: func(hoge) {
+        return "hello " + hoge + " " + buzz
+    }
+}
