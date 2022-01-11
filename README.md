@@ -3,10 +3,10 @@
 
 [キーたん語（Qiitan-go）](https://github.com/Qithub-BOT/Qiitan-go)は、Qiitan ファンの、Qiitan ファンによる、Qiitan ファンのための「お遊び用スクリプト言語」です。
 
-> Qiitan は、[Qiita](https://qiita.com/)™️ の SNS「[Qiitadon](https://qiitadon.com/)<sub><sup><sup>β</sup></sup></sub>」のマスコット・キャラクターです。
+> Qiitan は、[Qiita](https://qiita.com/)<sup>™️</sup> の SNS である「[Qiitadon](https://qiitadon.com/)<sub><sup><sup>β</sup></sup></sub>」のマスコット・キャラクターです。
 >
 > - [キーたん（Qiitan）](https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png) @ Qiitadon
-> - `Qiitan-go` は Qiitan のファン・アプリであり、[Qiita](https://qiita.com/)™️ とは一切関係がありません。
+> - `Qiitan-go` は Qiitan のファン・アプリであり、[Qiita](https://qiita.com/)<sup>™️</sup> とは一切関係がありません。
 
 ---
 
@@ -26,6 +26,8 @@
     Hello World!
     ```
 
+---
+
 ### 対話モード（[REPL](https://ja.wikipedia.org/wiki/REPL)）での実行例
 
 ```shellsession
@@ -33,7 +35,7 @@ $ # 対話モード（REPL）で実行
 $ qiitan
 Welcome to Qiitan Script Interactive Mode! (To exit just type `bye`)
 > foo := import("fmt")
-LOG: {sprintf: <user-function>, __module_name__: "fmt", print: <user-function>, printf: <user-function>, println: <user-function>}
+LOG: {__module_name__: "fmt", print: <user-function>, printf: <user-function>, println: <user-function>, sprintf: <user-function>}
 > foo.println("Hello World!")
 Hello World!
 LOG: <undefined> object returned. Perhaps the statement has no return or nothing is assigned to it.
@@ -43,15 +45,32 @@ Nice chatting with you. Thank you! Bye-bye~.
 $
 ```
 
+<details><summary>上記の簡易説明</summary>
+
 対話モードでは、出力した内容および代入した内容が適宜表示されます。
 
-`foo := import("fmt")` で、`foo` 変数に `fmt` モジュールを代入していますが、その `fmt` モジュールには `print()`, `printf()`, `println()`, `sprintf()` が定義されていることが確認できます。
+例えば、`foo := import("fmt")` で `foo` 変数に `fmt` モジュールを代入した場合、続く `LOG:` の内容から、`foo` 変数には `fmt` モジュールの中身である `print()`, `printf()`, `println()`, `sprintf()` の関数が定義されていることが確認できます。
 
-```go
+```shellsession
+> foo := import("fmt")
 LOG: {__module_name__: "fmt", print: <user-function>, printf: <user-function>, println: <user-function>, sprintf: <user-function>}
 ```
 
-`foo.println("Hello World!")` で出力していますが、続く `LOG: <undefined> object returned` は、`fmt.println()` に戻り値がない（型がない値が返ってきた）ことを表しています。
+次に `foo.println("Hello World!")` で出力していますが、続く `LOG: <undefined> object returned` は、`fmt.println()` に戻り値がなかった（型がない値が返ってきた）ことを表しています。
+
+```shellsession
+> foo.println("Hello World!")
+Hello World!
+LOG: <undefined> object returned. Perhaps the statement has no return or nothing is assigned to it.
+```
+
+これは、`qiitan` スクリプトでは `return` のない関数は `<undefined>` オブジェクト（型がないことを示すオブジェクト）が自動的に返されるためです。
+
+---
+
+</details>
+
+---
 
 ### プリ・コンパイルと実行
 
