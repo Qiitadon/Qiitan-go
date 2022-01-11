@@ -65,7 +65,7 @@ func TestRun_compile(t *testing.T) {
 		main()
 	})
 
-	assert.Contains(t, out, "/tmp/TestRun_compile")
+	assert.Contains(t, out, "TestRun_compile")
 	assert.NotContains(t, out, "Hello World", "-o option should not execute the script")
 	assert.FileExists(t, pathFileBin)
 }
