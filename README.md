@@ -3,7 +3,7 @@
 
 [キーたん語（Qiitan-go）](https://github.com/Qithub-BOT/Qiitan-go)は、Qiitan ファンの、Qiitan ファンによる、Qiitan ファンのための「お遊び用スクリプト言語」です。
 
-> Qiitan は [Qiita](https://qiita.com/)™️ の SNS「[Qiitadon](https://qiitadon.com/)<sub><sup><sup>β</sup></sup></sub>」のマスコット・キャラクターです。
+> Qiitan は、[Qiita](https://qiita.com/)™️ の SNS「[Qiitadon](https://qiitadon.com/)<sub><sup><sup>β</sup></sup></sub>」のマスコット・キャラクターです。
 >
 > - [キーたん（Qiitan）](https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png) @ Qiitadon
 > - `Qiitan-go` は Qiitan のファン・アプリであり、[Qiita](https://qiita.com/)™️ とは一切関係がありません。
