@@ -1,3 +1,4 @@
+基本構文および標準モジュールのドキュメントを埋める +docs
 インタプリタのコマンドを flag パッケージベースから Cobra に変更 +main
 /gen/gen_scrmods.go のカバレッジ
 SHA-3 および BLAKE3 の実装 +hash
