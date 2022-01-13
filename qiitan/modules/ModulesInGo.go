@@ -9,5 +9,6 @@ import (
 //
 // "./gomods/" 下にモジュールを設置した場合は、ここにも追記する必要があります。
 var ModulesInGo = map[string]map[string]tengo.Object{
-	"hash": gomods.HashModule,
+	"hash":      gomods.HashModule,
+	"fibonacci": gomods.FibonacciModule,
 }
