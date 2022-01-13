@@ -1,0 +1,10 @@
+// Sample to use fibonacci functions in standard modules
+fib := import("fibonacci")
+fmt := import("fmt")
+
+fmt.println(fib.fib(35))  // Fibonacci
+fmt.println(fib.fibt(35)) // Fibonacci tail
+
+// Ouput:
+// 9227465
+// 9227465

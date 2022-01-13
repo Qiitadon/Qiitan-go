@@ -1,32 +1,10 @@
 package gomods_test
 
 import (
-	"context"
 	"testing"
 
-	"github.com/Qithub-BOT/Qiitan-go/qiitan/modules"
-	"github.com/d5/tengo/v2"
-	"github.com/d5/tengo/v2/require"
 	"github.com/stretchr/testify/assert"
 )
-
-// ----------------------------------------------------------------------------
-//  Helper Function
-// ----------------------------------------------------------------------------
-
-// RunScript はスクリプトを実行して、実行後の各オブジェクトの状態を返します。
-func RunScript(t *testing.T, script string) *tengo.Compiled {
-	t.Helper()
-
-	s := tengo.NewScript([]byte(script))
-	s.SetImports(modules.GetModuleMapAll())
-
-	// run the script
-	compiled, err := s.RunContext(context.Background())
-	require.NoError(t, err)
-
-	return compiled
-}
 
 // ----------------------------------------------------------------------------
 //  Tests
