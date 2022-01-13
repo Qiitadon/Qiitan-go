@@ -1,6 +1,8 @@
-fmt := import("fmt")
+package main
 
-fib := func(x) {
+import "fmt"
+
+func fib(x int) int {
 	if x == 0 {
 		return 0
 	}
@@ -11,6 +13,8 @@ fib := func(x) {
 	return fib(x-1) + fib(x-2)
 }
 
-fmt.println(fib(35))
+func main() {
+	fmt.Println(fib(35))
+}
 
 // Output: 9227465

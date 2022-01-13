@@ -1,0 +1,102 @@
+# =============================================================================
+#  Docker Compose file for Benchmarking
+# =============================================================================
+#  Usage:
+#    $ docker-compose build
+#    ** snip **
+#    $ docker-compose run --rm go
+#    ** snip **
+#    $ docker-compose run --rm python
+#    ** snip **
+version: "3.9"
+services:
+  go:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        BASEIMAGE: golang:alpine
+    volumes:
+      - .:/tmp/bench
+    working_dir: /tmp/bench
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    entrypoint: [ "perf", "stat", "-r5", "go", "run", "./fibonacci.go" ]
+  python:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        BASEIMAGE: python:3-alpine
+    volumes:
+      - .:/tmp/bench
+    working_dir: /tmp/bench
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    entrypoint: [ "perf", "stat", "-r5", "python", "./fibonacci.py" ]
+  php:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        BASEIMAGE: php:alpine
+    volumes:
+      - .:/tmp/bench
+    working_dir: /tmp/bench
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    entrypoint: [ "perf", "stat", "-r5", "php", "./fibonacci.php" ]
+  qiitan:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        BASEIMAGE: alpine
+    volumes:
+      - .:/tmp/bench
+    working_dir: /tmp/bench
+    environment:
+      - LANG_BENCH=qiitan
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    entrypoint: [ "perf", "stat", "-r5", "qiitan", "./fibonacci.qiitan" ]
+  tengo:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        BASEIMAGE: alpine
+    volumes:
+      - .:/tmp/bench
+    working_dir: /tmp/bench
+    environment:
+      - LANG_BENCH=qiitan
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    entrypoint: [ "perf", "stat", "-r5", "tengo", "./fibonacci.tengo" ]
+  qiitanf:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        BASEIMAGE: alpine
+    volumes:
+      - .:/tmp/bench
+    working_dir: /tmp/bench
+    environment:
+      - LANG_BENCH=qiitan
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    entrypoint: [ "./qiitan.sh" ]

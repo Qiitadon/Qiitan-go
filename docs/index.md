@@ -5,26 +5,26 @@
 
 ## 目次
 
-* [Qiitan スクリプトの基本構文](./specs/001_language_syntax.md#qiitan-スクリプトの基本構文)
-  * [スクリプトの文字コード](./specs/001_language_syntax.md#スクリプトの文字コード)
-  * [型と値](./specs/001_language_syntax.md#型と値)
-  * [文（statement）、式（expression）、値（value）](./specs/001_language_syntax.md#文statement式expression値value)
+* [Qiitan スクリプト・ファイル](./specs/001_language_syntax/001_scrip_file.md#qiitan-スクリプトファイル)
+  * [ファイル・フォーマット](./specs/001_language_syntax/001_scrip_file.md#ファイルフォーマット)
+  * [文字コード](./specs/001_language_syntax/001_scrip_file.md#文字コード)
+  * [ファイルのアクセス権](./specs/001_language_syntax/001_scrip_file.md#ファイルのアクセス権)
+
+* [値と型](./specs/001_language_syntax/002_values_and_types.md#値と型)
+  * [Qiitan スクリプトで使える型の一覧](./specs/001_language_syntax/002_values_and_types.md#qiitan-スクリプトで使える型の一覧)
+    * [immutable](./specs/001_language_syntax/002_values_and_types.md#immutable)
+    * [error](./specs/001_language_syntax/002_values_and_types.md#error)
+    * [undefined](./specs/001_language_syntax/002_values_and_types.md#undefined)
+
+* [文（statement）、式（expression）、値（value）](./specs/001_language_syntax/003_else.md#文statement式expression値value)
+
 
 * [組み込み関数（Built\-in Functions）](./specs/002_builtin_functions.md#組み込み関数built-in-functions)
 
-* [用語集](./specs/999_words_and_terms.md#用語集)
-  * [キーたん語（qiitan スクリプト）](./specs/999_words_and_terms.md#キーたん語qiitan-スクリプト)
-  * [qiitan インタプリタ](./specs/999_words_and_terms.md#qiitan-インタプリタ)
-  * [Tengo 言語](./specs/999_words_and_terms.md#tengo-言語)
-  * [モジュール](./specs/999_words_and_terms.md#モジュール)
-  * [バイトコードとコンパイル](./specs/999_words_and_terms.md#バイトコードとコンパイル)
-  * [tengo VM（tengo 仮想マシン）](./specs/999_words_and_terms.md#tengo-vmtengo-仮想マシン)
-  * [オブジェクト](./specs/999_words_and_terms.md#オブジェクト)
-
-* [error type（エラー型と値）](./specs/functions/011_type_error.md#error-typeエラー型と値)
-  * [エラーの作成](./specs/functions/011_type_error.md#エラーの作成)
-  * [エラー内容の取り出し](./specs/functions/011_type_error.md#エラー内容の取り出し)
-  * [エラー型の確認](./specs/functions/011_type_error.md#エラー型の確認)
+* [error type（エラー型と値）](./specs/002_functions/011_type_error.md#error-typeエラー型と値)
+  * [エラーの作成](./specs/002_functions/011_type_error.md#エラーの作成)
+  * [エラー内容の取り出し](./specs/002_functions/011_type_error.md#エラー内容の取り出し)
+  * [エラー型の確認](./specs/002_functions/011_type_error.md#エラー型の確認)
 
 ## モジュール
 
@@ -55,6 +55,23 @@
   * [sha256](./modules_qiitan/hash.md#sha256)
   * [sha384](./modules_qiitan/hash.md#sha384)
   * [sha512](./modules_qiitan/hash.md#sha512)
+
+## 用語集
+
+「キーたん語」の言語仕様もしくは「qiitan スクリプト」の構文など、仕様の中で使われる用語の定義と説明です。（順不順）
+
+* [組み込み関数](./index/built_in_functions.md#組み込み関数)
+* [バイトコードとコンパイル](./index/bytecode_compile.md#バイトコードとコンパイル)
+* [qiitan インタプリタ](./index/interpreter.md#qiitan-インタプリタ)
+* [モジュール](./index/module.md#モジュール)
+  * [標準モジュール](./index/module.md#標準モジュール)
+  * [外部モジュール](./index/module.md#外部モジュール)
+* [オブジェクト](./index/object.md#オブジェクト)
+* [キーたん語（qiitan スクリプト）](./index/qiitanlang.md#キーたん語qiitan-スクリプト)
+  * [「キーたん語」と「qiitan スクリプト」の違い](./index/qiitanlang.md#キーたん語とqiitan-スクリプトの違い)
+  * [Qiitan と qiitan の使い分け](./index/qiitanlang.md#qiitan-と-qiitan-の使い分け)
+* [tengo VM（tengo 仮想マシン）](./index/tengo_vm.md#tengo-vmtengo-仮想マシン)
+* [Tengo 言語](./index/tengolang.md#tengo-言語)
 
 ---
 
