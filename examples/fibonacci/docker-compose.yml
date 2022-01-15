@@ -52,22 +52,6 @@ services:
     security_opt:
       - seccomp:unconfined
     entrypoint: [ "perf", "stat", "-r5", "php", "./fibonacci.php" ]
-  qiitan:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-      args:
-        BASEIMAGE: alpine
-    volumes:
-      - .:/tmp/bench
-    working_dir: /tmp/bench
-    environment:
-      - LANG_BENCH=qiitan
-    cap_add:
-      - SYS_PTRACE
-    security_opt:
-      - seccomp:unconfined
-    entrypoint: [ "perf", "stat", "-r5", "qiitan", "./fibonacci.qiitan" ]
   tengo:
     build:
       context: .
@@ -84,7 +68,8 @@ services:
     security_opt:
       - seccomp:unconfined
     entrypoint: [ "perf", "stat", "-r5", "tengo", "./fibonacci.tengo" ]
-  qiitanf:
+  # Pure qiitan script
+  qiitan:
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -99,4 +84,21 @@ services:
       - SYS_PTRACE
     security_opt:
       - seccomp:unconfined
-    entrypoint: [ "./qiitan.sh" ]
+    entrypoint: [ "perf", "stat", "-r5", "qiitan", "./fibonacci.qiitan" ]
+  # Use qiitan standard module of fibonacci (kinda cheeting)
+  qiitan_std:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        BASEIMAGE: alpine
+    volumes:
+      - .:/tmp/bench
+    working_dir: /tmp/bench
+    environment:
+      - LANG_BENCH=qiitan
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    entrypoint: [ "perf", "stat", "-r5", "qiitan", "./fibonacci_std.qiitan" ]
