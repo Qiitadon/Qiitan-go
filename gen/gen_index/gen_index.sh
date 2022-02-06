@@ -43,7 +43,7 @@ modules_qiitan="$(gh-md-toc --depth=2 --hide-footer --hide-header --serial $(fin
 {
     # タイトル追記
     printf "# Qiitan スクリプトの言語仕様\n\n"
-    printf "- [Qiitan-go リポジトリ](https://github.com/Qithub-BOT/Qiitan-go) @ GitHub\n\n"
+    printf "- [Qiitan-go リポジトリ](https://github.com/Qiitadon/Qiitan-go) @ GitHub\n\n"
     printf "## 目次\n\n"
 
     # ./specs/* 下の Markdown の目次一覧を追記
@@ -59,7 +59,7 @@ modules_qiitan="$(gh-md-toc --depth=2 --hide-footer --hide-header --serial $(fin
 
     # フッターの追記
     echo "${HR}"
-    echo '- View the repository: [Qiitan-go](https://github.com/Qithub-BOT/Qiitan-go) @ GitHub'
+    echo '- View the repository: [Qiitan-go](https://github.com/Qiitadon/Qiitan-go) @ GitHub'
     echo '- Table of contents created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)' @ GitHub
 
 } >>"${PATH_FILE_INDEX}"

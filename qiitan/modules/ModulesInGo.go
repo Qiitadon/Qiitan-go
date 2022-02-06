@@ -1,7 +1,7 @@
 package modules
 
 import (
-	"github.com/Qithub-BOT/Qiitan-go/qiitan/modules/gomods"
+	"github.com/Qiitadon/Qiitan-go/qiitan/modules/gomods"
 	"github.com/d5/tengo/v2"
 )
 

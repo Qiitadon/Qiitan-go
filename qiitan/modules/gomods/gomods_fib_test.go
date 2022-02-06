@@ -3,7 +3,7 @@ package gomods_test
 import (
 	"testing"
 
-	"github.com/Qithub-BOT/Qiitan-go/qiitan/modules/gomods"
+	"github.com/Qiitadon/Qiitan-go/qiitan/modules/gomods"
 	"github.com/stretchr/testify/assert"
 )
 

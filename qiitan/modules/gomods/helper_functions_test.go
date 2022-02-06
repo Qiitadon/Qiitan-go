@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/Qithub-BOT/Qiitan-go/qiitan/modules"
+	"github.com/Qiitadon/Qiitan-go/qiitan/modules"
 	"github.com/d5/tengo/v2"
 	"github.com/stretchr/testify/require"
 )

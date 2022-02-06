@@ -1,11 +1,11 @@
 <!-- markdownlint-disable MD041 -->
-[![platform icon](https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qithub-BOT/Qiitan-go/releases/latest "view latest releases page")
-[![homebrew icon](https://img.shields.io/badge/homebrew-macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qithub-BOT/Qiitan-go#install "view latest releases page")
-[![MIT license](https://img.shields.io/github/license/Qithub-BOT/Qiitan-go)](https://github.com/Qithub-BOT/Qiitan-go/blob/main/LICENSE "view license page")
+[![platform icon](https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qiitadon/Qiitan-go/releases/latest "view latest releases page")
+[![homebrew icon](https://img.shields.io/badge/homebrew-macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qiitadon/Qiitan-go#install "view latest releases page")
+[![MIT license](https://img.shields.io/github/license/Qiitadon/Qiitan-go)](https://github.com/Qiitadon/Qiitan-go/blob/main/LICENSE "view license page")
 
 # Qiitan-go<sub><sup><sup>alpha</sup></sup></sub>
 
-[キーたん語（Qiitan-go）](https://github.com/Qithub-BOT/Qiitan-go)は、[キーたん（Qiitan）](https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png) ファンの、Qiitan ファンによる、Qiitan ファンのための「お遊び用スクリプト言語」です。
+[キーたん語（Qiitan-go）](https://github.com/Qiitadon/Qiitan-go)は、[キーたん（Qiitan）](https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png) ファンの、Qiitan ファンによる、Qiitan ファンのための「お遊び用スクリプト言語」です。
 
 ---
 
@@ -94,7 +94,7 @@ Hello World!
 ## リソース
 
 - [`qiitan` スクリプトのサンプル集](./samples)
-- [`qiitan` スクリプトのドキュメント](https://qithub-bot.github.io/Qiitan-go/)
+- [`qiitan` スクリプトのドキュメント](https://Qiitadon.github.io/Qiitan-go/)
 
 ---
 
@@ -103,10 +103,10 @@ Hello World!
 - [Homebrew](https://brew.sh/index_ja) (**macOS:** x86_64/Intel/AMD64, M1/ARM64, **Linux & Windows WSL2:** x86_64, ARM64, ARM v6)
 
     ```bash
-    brew install qithub-bot/apps/qiitan
+    brew install Qiitadon/apps/qiitan
     ```
 - 単体バイナリ（Windows, macOS, Linux）
-    - [Releases ページ](https://github.com/Qithub-BOT/Qiitan-go/releases/latest)から該当 OS + アーキテクチャをダウンロード。
+    - [Releases ページ](https://github.com/Qiitadon/Qiitan-go/releases/latest)から該当 OS + アーキテクチャをダウンロード。
 
 ---
 
@@ -114,19 +114,19 @@ Hello World!
 
 このリポジトリでは、以下のような最低限のセキュリティ対策が施されています。
 
-[![go1.14+](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/go-versions.yml/badge.svg)](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/go-versions.yml "Unit Tests on Go 1.16, 17 and latest")
-[![Platform Tests](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/platform-test.yml/badge.svg)](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/platform-test.yml "Test on Win, macOS, Linux")
-[![golangci-lint](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/golangci-lint.yml "Static Analysis")
-[![CodeQL](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/codeQL-analysis.yml/badge.svg)](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/codeQL-analysis.yml "Vulnerability Scan")
-[![codecov](https://codecov.io/gh/Qithub-BOT/Qiitan-go/branch/main/graph/badge.svg?token=uW30s2bK8M)](https://codecov.io/gh/Qithub-BOT/Qiitan-go "Code Coverage")
-[![Go Report Card](https://goreportcard.com/badge/github.com/Qithub-BOT/Qiitan-go)](https://goreportcard.com/report/github.com/Qithub-BOT/Qiitan-go "Code Quality")
+[![go1.14+](https://github.com/Qiitadon/Qiitan-go/actions/workflows/go-versions.yml/badge.svg)](https://github.com/Qiitadon/Qiitan-go/actions/workflows/go-versions.yml "Unit Tests on Go 1.16, 17 and latest")
+[![Platform Tests](https://github.com/Qiitadon/Qiitan-go/actions/workflows/platform-test.yml/badge.svg)](https://github.com/Qiitadon/Qiitan-go/actions/workflows/platform-test.yml "Test on Win, macOS, Linux")
+[![golangci-lint](https://github.com/Qiitadon/Qiitan-go/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/Qiitadon/Qiitan-go/actions/workflows/golangci-lint.yml "Static Analysis")
+[![CodeQL](https://github.com/Qiitadon/Qiitan-go/actions/workflows/codeQL-analysis.yml/badge.svg)](https://github.com/Qiitadon/Qiitan-go/actions/workflows/codeQL-analysis.yml "Vulnerability Scan")
+[![codecov](https://codecov.io/gh/Qiitadon/Qiitan-go/branch/main/graph/badge.svg?token=uW30s2bK8M)](https://codecov.io/gh/Qiitadon/Qiitan-go "Code Coverage")
+[![Go Report Card](https://goreportcard.com/badge/github.com/Qiitadon/Qiitan-go)](https://goreportcard.com/report/github.com/Qiitadon/Qiitan-go "Code Quality")
 
 ---
 
 ## 言語拡張開発（コントリビュート）
 
-[![go1.16+](https://img.shields.io/badge/Go-1.16+-blue?logo=go)](https://github.com/Qithub-BOT/Qiitan-go/actions/workflows/go-versions.yml "Supported versions")
-[![Go Reference](https://pkg.go.dev/badge/github.com/Qithub-BOT/Qiitan-go.svg)](https://pkg.go.dev/github.com/Qithub-BOT/Qiitan-go)
+[![go1.16+](https://img.shields.io/badge/Go-1.16+-blue?logo=go)](https://github.com/Qiitadon/Qiitan-go/actions/workflows/go-versions.yml "Supported versions")
+[![Go Reference](https://pkg.go.dev/badge/github.com/Qiitadon/Qiitan-go.svg)](https://pkg.go.dev/github.com/Qiitadon/Qiitan-go)
 
 - `qiitan` コマンド（インタプリタ）自体は Go 言語で開発されています。
 - `qiitan` コマンド（インタプリタ）は、スタンドアロン（単体）のバイナリとして動作するように設計されています。
@@ -136,8 +136,8 @@ Hello World!
 
 ## License
 
-- [MIT](https://github.com/Qithub-BOT/Qiitan-go/LICENSE) License.
-- Copyright: © 2022 [The Qiitan-go Contributors](https://github.com/Qithub-BOT/Qiitan-go/graphs/contributors).
+- [MIT](https://github.com/Qiitadon/Qiitan-go/LICENSE) License.
+- Copyright: © 2022 [The Qiitan-go Contributors](https://github.com/Qiitadon/Qiitan-go/graphs/contributors).
 
 ### 謝辞
 

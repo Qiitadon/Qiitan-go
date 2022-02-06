@@ -1,4 +1,4 @@
-module github.com/Qithub-BOT/Qiitan-go
+module github.com/Qiitadon/Qiitan-go
 
 go 1.16
 

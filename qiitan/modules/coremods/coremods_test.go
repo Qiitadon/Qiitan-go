@@ -3,7 +3,7 @@ package coremods_test
 import (
 	"testing"
 
-	"github.com/Qithub-BOT/Qiitan-go/qiitan/modules/coremods"
+	"github.com/Qiitadon/Qiitan-go/qiitan/modules/coremods"
 	"github.com/stretchr/testify/assert"
 )
 

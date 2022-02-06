@@ -3,7 +3,7 @@
 # modules
 
 ```go
-import "github.com/Qithub-BOT/Qiitan-go/modules"
+import "github.com/Qiitadon/Qiitan-go/modules"
 ```
 
 ### Package modules

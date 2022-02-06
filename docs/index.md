@@ -1,7 +1,7 @@
 <!-- Code generated using /gen/gen_readme.sh; DO NOT EDIT. -->
 # Qiitan スクリプトの言語仕様
 
-- [Qiitan-go リポジトリ](https://github.com/Qithub-BOT/Qiitan-go) @ GitHub
+- [Qiitan-go リポジトリ](https://github.com/Qiitadon/Qiitan-go) @ GitHub
 
 ## 目次
 
@@ -58,5 +58,5 @@
 
 ---
 
-- View the repository: [Qiitan-go](https://github.com/Qithub-BOT/Qiitan-go) @ GitHub
+- View the repository: [Qiitan-go](https://github.com/Qiitadon/Qiitan-go) @ GitHub
 - Table of contents created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go) @ GitHub

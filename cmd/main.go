@@ -7,9 +7,9 @@ import (
 	"path/filepath"
 
 	"github.com/KEINOS/go-utiles/util"
-	"github.com/Qithub-BOT/Qiitan-go/qiitan/compiler"
-	"github.com/Qithub-BOT/Qiitan-go/qiitan/modules"
-	"github.com/Qithub-BOT/Qiitan-go/qiitan/repl"
+	"github.com/Qiitadon/Qiitan-go/qiitan/compiler"
+	"github.com/Qiitadon/Qiitan-go/qiitan/modules"
+	"github.com/Qiitadon/Qiitan-go/qiitan/repl"
 )
 
 const (

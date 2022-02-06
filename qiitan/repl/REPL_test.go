@@ -6,8 +6,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/Qithub-BOT/Qiitan-go/qiitan/modules"
-	"github.com/Qithub-BOT/Qiitan-go/qiitan/repl"
+	"github.com/Qiitadon/Qiitan-go/qiitan/modules"
+	"github.com/Qiitadon/Qiitan-go/qiitan/repl"
 	"github.com/stretchr/testify/assert"
 	"github.com/zenizh/go-capturer"
 )

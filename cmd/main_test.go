@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	"github.com/KEINOS/go-utiles/util"
-	"github.com/Qithub-BOT/Qiitan-go/qiitan/compiler"
+	"github.com/Qiitadon/Qiitan-go/qiitan/compiler"
 	"github.com/d5/tengo/v2/require"
 	"github.com/stretchr/testify/assert"
 	"github.com/zenizh/go-capturer"

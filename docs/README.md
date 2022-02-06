@@ -2,7 +2,7 @@
 
 このディレクトリは、`qiitan` スクリプトを利用するための各種仕様のドキュメント置き場です。
 
-- [ドキュメントを読む](https://qithub-bot.github.io/Qiitan-go/)
+- [ドキュメントを読む](https://Qiitadon.github.io/Qiitan-go/)
 
 typo、言い回しなど、気付いたら何でも PR してください。
 

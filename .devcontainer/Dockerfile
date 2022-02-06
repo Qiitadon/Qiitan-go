@@ -17,6 +17,7 @@ FROM ghcr.io/keinos/vscode-dev-container-go:${VARIANT}
 # [Optional] Uncomment this section to go install anything else you need.
 USER vscode
 RUN cd /tmp && \
+    git config --global init.defaultBranch main && \
     go install "github.com/d5/tengo/cmd/tengo@latest" && \
     go install "golang.org/x/lint/golint@latest" && \
     go install "github.com/ekalinin/github-markdown-toc.go/cmd/gh-md-toc@latest" && \
