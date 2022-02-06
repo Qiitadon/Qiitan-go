@@ -1,4 +1,10 @@
 <!-- markdownlint-disable MD041 -->
+
+> - [キーたん（Qiitan）](https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png)は [Qiita](https://qiita.com/)<sup>™️</sup> の SNS である「[Qiitadon](https://qiitadon.com/)<sub><sup><sup>β</sup></sup></sub>」のマスコット・キャラクターです。
+> - `Qiitan-go` は Qiitan のファン・アプリです。[Qiita](https://qiita.com/)<sup>™️</sup> とは一切関係がありません。
+
+---
+
 [![platform icon](https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qiitadon/Qiitan-go/releases/latest "view latest releases page")
 [![homebrew icon](https://img.shields.io/badge/homebrew-macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qiitadon/Qiitan-go#install "view latest releases page")
 [![MIT license](https://img.shields.io/github/license/Qiitadon/Qiitan-go)](https://github.com/Qiitadon/Qiitan-go/blob/main/LICENSE "view license page")
@@ -6,15 +12,6 @@
 # Qiitan-go<sub><sup><sup>alpha</sup></sup></sub>
 
 [キーたん語（Qiitan-go）](https://github.com/Qiitadon/Qiitan-go)は、[キーたん（Qiitan）](https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png) ファンの、Qiitan ファンによる、Qiitan ファンのための「お遊び用スクリプト言語」です。
-
----
-
-> <sub><sup>キーたん（Qiitan）は、[Qiita](https://qiita.com/)<sup>™️</sup> の SNS である「[Qiitadon](https://qiitadon.com/)<sub><sup><sup>β</sup></sup></sub>」のマスコット・キャラクターです。</sup></sub>
->
-> - <sub><sup>[キーたん（Qiitan）](https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png) @ Qiitadon</sup></sub>
-> - <sub><sup>`Qiitan-go` は Qiitan のファン・アプリであり、[Qiita](https://qiita.com/)<sup>™️</sup> とは一切関係がありません。</sup></sub>
-
----
 
 ## `qiitan` スクリプトの Hello World
 
