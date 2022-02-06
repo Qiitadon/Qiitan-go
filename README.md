@@ -100,7 +100,7 @@ Hello World!
 
 ## リソース
 
-- [`qiitan` スクリプトのサンプル集](./samples)
+- [`qiitan` スクリプトのサンプル集](./docs/examples)
 - [`qiitan` スクリプトのドキュメント](https://Qiitadon.github.io/Qiitan-go/)
 
 ---
