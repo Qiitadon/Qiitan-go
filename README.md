@@ -2,17 +2,15 @@
 > - <sub><sup><a href="https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png">キーたん（Qiitan）</a>は、<a href="https://qiita.com/">Qiita</a><sup>™️</sup> の SNS である「<a href="https://qiitadon.com/">Qiitadon</a><sub><sup><sup>β</sup></sup></sub>」のマスコット・キャラクターです。</sup></sub>
 > - <sub><sup>`Qiitan-go` は非公認の Qiitan のファン・アプリです。<a href="https://qiita.com/">Qiita</a><sup>™️</sup> とは一切関係がありません。</sup></sub>
 
----
-
 [![platform icon](https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qithub-BOT/Qiitan-go/releases/latest "view latest releases page")
 [![homebrew icon](https://img.shields.io/badge/homebrew-macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qithub-BOT/Qiitan-go#install "view latest releases page")
 [![MIT license](https://img.shields.io/github/license/Qithub-BOT/Qiitan-go)](https://github.com/Qithub-BOT/Qiitan-go/blob/main/LICENSE "view license page")
 
-- [`qiitan` インタプリタのインストール or ダウンロード](https://github.com/Qithub-BOT/Qiitan-go#install)
-
 # Qiitan-go<sub><sup><sup>alpha</sup></sup></sub>
 
 [キーたん語（Qiitan-go）](https://github.com/Qiitadon/Qiitan-go)は、[キーたん（Qiitan）](https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png) ファンの、Qiitan ファンによる、Qiitan ファンのための「お遊び用スクリプト言語」です。
+
+- `qiitan` インタプリタの[インストール](https://github.com/Qithub-BOT/Qiitan-go#install) or [ダウンロード](https://github.com/Qiitadon/Qiitan-go/releases/latest)
 
 ## `qiitan` スクリプトの Hello World
 
@@ -39,7 +37,7 @@ Hello World!
 
     - この qiitan スクリプトは、標準モジュール（`qiitan` インタプリタに同梱されているモジュール）から `fmt` モジュールを `foo` に代入し、その `fmt` モジュール内で定義されている `println` 関数（改行付き `print` 関数）を呼び出して標準出力に出力しています。
 
-### 対話モード（[REPL](https://ja.wikipedia.org/wiki/REPL)）での実行例
+### 対話モード（[REPL](https://ja.wikipedia.org/wiki/REPL)）で実行する例
 
 ```shellsession
 $ # 対話モード（REPL）で実行
@@ -56,37 +54,12 @@ Nice chatting with you. Thank you! Bye-bye~.
 $
 ```
 
-<details><summary>上記の簡易説明</summary><br>
-
-対話モードでは、出力した内容および代入した内容が適宜表示されます。
-
-例えば、`foo := import("fmt")` で `foo` 変数に `fmt` モジュールを代入した場合、続く `LOG:` の内容から、`foo` 変数には `fmt` モジュールの中身である `print()`, `printf()`, `println()`, `sprintf()` の関数が定義されていることが確認できます。
-
-```shellsession
-> foo := import("fmt")
-LOG: {__module_name__: "fmt", print: <user-function>, printf: <user-function>, println: <user-function>, sprintf: <user-function>}
-```
-
-次に `foo.println("Hello World!")` で標準出力に "`Hello World!`" を出力していますが、続く `LOG: <undefined> object returned` は、`fmt.println()` に戻り値がなかった（型がない値が返ってきた）ことを表しています。
-
-```shellsession
-> foo.println("Hello World!")
-Hello World!
-LOG: <undefined> object returned. Perhaps the statement has no return or nothing is assigned to it.
-```
-
-これは、`qiitan` スクリプトでは `return` のない関数は `<undefined>` オブジェクト（型がないことを示すオブジェクト）が自動的に返されるためです。
-
----
-
-</details>
-
 ### プリ・コンパイルと実行
 
 キーたん語は、なんちゃってプリ・コンパイル型の言語です。
 
 `qiitan` スクリプトの実行だけでなく、その中間ファイル（バイトコード）を出力することができ、この中間ファイルも `qiitan` インタプリタで実行することができます。
-`qiitan` スクリプトが複数ファイルに分割されている場合、1 つのファイルとして配布したい場合に便利です。（速度は大して変わりません）
+**複数ファイルで構成されている `qiitan` スクリプトを 1 つのファイルとして配布したい場合に便利**です。（実行速度は大して変わりません）
 
 ```shellsession
 $ qiitan -compile ./helloworld.qiitan
