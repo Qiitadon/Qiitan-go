@@ -1,0 +1,305 @@
+// ============================================================================
+//  Fmt module sample.
+// ============================================================================
+fmt := import("fmt")
+
+// ----------------------------------------------------------------------------
+//  fmt.print (note the `\n` at the end of args)
+// ----------------------------------------------------------------------------
+
+fmt.print("Hello, world! (single arg)\n")
+// Output: Hello, world! (single arg)\n
+
+fmt.print("Hello,", " ", "world!", " ", "(multiple args)", "\n")
+// Output: Hello, world! (multiple args)\n
+
+fmt.print("Unlike", "Go's", "fmt.Print", "function,", "no spaces are added",
+    "between the operands.", "\n")
+// Output: UnlikeGo'sfmt.Printfunction,no spaces are addedbetween the operands.\n
+
+// ----------------------------------------------------------------------------
+//  fmt.println
+// ----------------------------------------------------------------------------
+
+fmt.println("Hello, world! (single arg)")
+// Output: Hello, world! (single arg)\n
+
+fmt.println("Hello,", " ", "world!", " ", "(multiple args)")
+// Output: Hello, world! (multiple args)\n
+
+fmt.println("Unlike", "Go's", "fmt.Print", "function,", "no spaces are added",
+    "between the operands.")
+// Output: UnlikeGo'sfmt.Printfunction,no spaces are addedbetween the operands.\n
+
+// ----------------------------------------------------------------------------
+//  fmt.println
+// ----------------------------------------------------------------------------
+
+msg := "world!"
+arr := [1, 2, 3, 4]
+map := {"a": 1, "b": 2, "c": 3, "d": 4}
+
+/* General ----------------------------------------------------------------- */
+
+fmt.printf("No args: foo bar\n") // As is (won't parse "\n")
+// Output: "No args: foo bar\n"
+
+fmt.printf("Empty arg: %s\n", "") // Parses the "\n"
+// Output: Empty arg:
+
+fmt.printf("Escape %%: Energy %v%%\n", 120) // (%% = %)
+// Output: Escape %: Energy 120%
+
+fmt.printf("%%T: Type: %T\n", msg) // %T --> As type name
+// Output: %T: Type: string
+
+// %v --> As default value
+//   Default format for %v
+//     Bool   --> %v = %t
+//     Int    --> %v = %d
+//     Float  --> %v = %g
+//     String --> %v = %s
+//     Array  --> %v = [elem0 elem1 ...]
+//     Map    --> %v = {key1:value1 key2:value2 ...}
+fmt.printf("%%v: Hello, %v\n", msg)
+// Output: %v: Hello, "world!"
+
+fmt.printf("%%v: Compound Obj (array): %v\n", arr)
+// Output: %v: Compound Obj (array): [1, 2, 3, 4]
+
+fmt.printf("%%v: Compound Obj (map): %v\n", map)
+// Output: %v: Compound Obj (map): {a: 1, b: 2, c: 3, d: 4}
+
+/* Boolean ----------------------------------------------------------------- */
+
+fmt.printf("%%t: Bool: %t\n", 1 < 0) // %t --> Bool status as string
+// Output: %t: Bool: false
+
+/* Integer ----------------------------------------------------------------- */
+
+// Int to bin
+// ----------
+fmt.printf("%%b: Base2: %b\n", 255) // %b --> Integer as Base 2
+// Output: %b: Base2: 11111111
+
+// Int to oct
+// ----------
+fmt.printf("%%o: 255 --> Base8: %o\n", 255) // %o --> Integer as Base 8
+// Output: %o: 255 --> Base8: 377
+
+fmt.printf("%%#o: Base8 (w/ leading zero): %#o\n", 255) // %#o --> Integer as Base 8 with leading 0 (not 0o)
+// Output: %#o: Base8 (w/ leading zero): 0377
+
+fmt.printf("%%O: Base8 (w/ leading 0o): %O\n", 255) // %#O --> Integer as Base 8 with 0o prefix
+// Output: %O: Base8 (w/ leading 0o): 0o377
+
+fmt.printf("%%#O: Base8 (w/ leading  base sign and zero): %#O\n", 255) // %#O --> Integer as Base 8 with leading 0o and 0(zero)
+// Output: %#O: Base8 (w/ leading  base sign and zero): 0o0377
+
+// Int to dec
+// ----------
+fmt.printf("%%d: Base10: %d\n", 255) // %d --> Integer as Base 10
+// Output: %d: Base10: 255
+
+// Int to hex
+// ----------
+fmt.printf("%%x: Base16 (lower): %x\n", 255) // %x --> Integer as lower Base 16
+// Output: %x: Base16 (lower): ff
+
+fmt.printf("%%#x: Base16 (lower with base sign): %#x\n", 255) // %#x --> Integer as lower Base 16 with 0x
+// Output: %#x: Base16 (lower with base sign): 0xff
+
+fmt.printf("%%X: Base16 (UPPER): %X\n", 255) // %X --> Integer as UPPER Base 16
+// Output: %X: Base16 (UPPER): FF
+
+fmt.printf("%%#X: Base16 (UPPER with base sign): %#X\n", 255) // %#X --> Integer as lower Base 16 with 0x
+// Output: %#X: Base16 (UPPER with base sign): 0XFF
+
+// Int to char
+// -----------
+fmt.printf("%%c: CodePoint to char: %c\n", 128512) // %c --> Code point to char
+// Output: %c: CodePoint to char: 😀
+
+fmt.printf("%%q: CodePoint to quoted char: %q\n", 128512) // %q --> Like %c but quoted (safely escaped)
+// Output: %q: CodePoint to quoted char: '😀'
+
+// Int to code point
+// -----------------
+fmt.printf("%%U: Unicode format: %U\n", 128512) // %U --> As unicode format hex
+// Output: %U: Unicode format: U+1F600
+
+/* Numeric value sign ------------------------------------------------------ */
+
+fmt.printf("%%d :  100 --> %d\n", 100)
+fmt.printf("%%d : -100 --> %d\n", -100)
+fmt.printf("%%+d:  100 --> %+d\n", 100)  // Always print a sign
+fmt.printf("%%+d: -100 --> %+d\n", -100) // Always print a sign
+// Output:
+// %d :  100 --> 100
+// %d : -100 --> -100
+// %+d:  100 --> +100
+// %+d: -100 --> -100
+
+/* Float ------------------------------------------------------------------- */
+
+// %b --> As decimalless scientific notation with exponent a power of two.
+fmt.printf("%%b: 1.0 to b: %b\n", 1.0)
+// Output: %b: 1.0 to b: 4503599627370496p-52
+
+fmt.printf("%%e: 1.0 to e: %e\n", 1.0) // %e --> As scientific notation
+// Output: %e: 1.0 to e: 1.000000e+00
+
+fmt.printf("%%E: 1.0 to E: %E\n", 1.0) // %E --> As scientific notation
+// Output: %E: 1.0 to E: 1.000000E+00
+
+fmt.printf("%%f: 1.0 to f: %f\n", 1.0) // %f --> As decimal point but no exponent
+// Output: %f: 1.0 to f: 1.000000
+
+fmt.printf("%%F: 1.0 to F: %F\n", 1.0) // %F --> Synonym for %f
+// Output: %F: 1.0 to F: 1.000000
+
+// %x --> As hex notation with decimal power of two exponent.
+fmt.printf("%%x: 1.0 to x: %x\n", 1.0)
+// Output: %x: 1.0 to x: 0x1p+00
+
+fmt.printf("%%X: 1.0 to X: %X\n", 1.0) // %X --> Upper case of %x
+// Output: %X: 1.0 to X: 0X1P+00
+
+/*
+%g and %G are not documented. Can't find a good example.
+
+v1 := 1.000000000000001
+fmt.printf("%%g: big int to g: %g\n", v1)
+fmt.printf("%%G: big int to G: %g\n", v1)
+*/
+
+/* String and Bytes -------------------------------------------------------- */
+
+str := "this is a string"
+byts := bytes(str)
+
+fmt.printf("%%s: String to string: %s\n", str) // %s: string --> string
+// Output: %s: String to string: this is a string
+
+fmt.printf("%%s: Bytes to string: %s\n", byts) // %s: bytes --> string
+fmt.printf("  Type of input: %T\n", byts)
+// Output:
+// %s: Bytes to string: this is a string
+//  Type of input: bytes
+
+fmt.printf("%%q: String to q: %q\n", str) // %q --> quoted string
+// Output: String to q: "this is a string"
+
+non_ascii := "あいうえお"
+fmt.printf("%%q : Non ASCII %q\n", non_ascii)
+fmt.printf("%%+q: Non ASCII %+q\n", non_ascii) // %+q --> Guarantee ASCII-only output
+// Output:
+// %q : Non ASCII "あいうえお"
+// %+q: Non ASCII "\u3042\u3044\u3046\u3048\u304a"
+
+fmt.printf("%%q: Bytes to q: %q\n", byts) // %q --> quoted string
+// Output: %q: Bytes to q: "this is a string"
+
+fmt.printf("%%x: String to x: %x\n", "abcde") // %x --> hex
+// Output: %x: String to x: 6162636465
+
+fmt.printf("%%x: Bytes to x: %x\n", bytes("abcde")) // %x --> hex
+// Output: %x: Bytes to x: 6162636465
+
+fmt.printf("%%X: String to X: %X\n", "abcde") // %X --> HEX
+// Output: %X: String to X: 6162636465
+
+fmt.printf("%%X: Bytes to X: %X\n", bytes("abcde")) // %X --> HEX
+// Output: %X: Bytes to X: 6162636465
+
+/* Width and Precision ----------------------------------------------------- */
+
+/* Fill in the width margins with spaces. */
+fmt.printf("%%s : Default: %s\n", "a")
+fmt.printf("%%0s: Min width 0: %0s\n", "a")
+fmt.printf("%%1s: Min width 1: %1s\n", "a")
+fmt.printf("%%2s: Min width 2: %2s\n", "a")
+fmt.printf("%%3s: Min width 3: %3s\n", "a")
+fmt.printf("%%4s: Min width 4: %4s\n", "a")
+fmt.printf("%%5s: Min width 5: %5s\n", "a")
+// Output:
+// %s : Default: a
+// %0s: Min width 0: a
+// %1s: Min width 1: a
+// %2s: Min width 2:  a
+// %3s: Min width 3:   a
+// %4s: Min width 4:    a
+// %5s: Min width 5:     a
+
+fmt.printf("%%-s : Default: %-sb\n", "a") // %- --> fills padding to the right
+fmt.printf("%%-0s: Min width 0 (Right padding): %-0sb\n", "a")
+fmt.printf("%%-1s: Min width 1 (Right padding): %-1sb\n", "a")
+fmt.printf("%%-2s: Min width 2 (Right padding): %-2sb\n", "a")
+fmt.printf("%%-3s: Min width 3 (Right padding): %-3sb\n", "a")
+fmt.printf("%%-4s: Min width 4 (Right padding): %-4sb\n", "a")
+fmt.printf("%%-5s: Min width 5 (Right padding): %-5sb\n", "a")
+// Output:
+// %-s : Default: ab
+// %-0s: Min width 0 (Right padding): ab
+// %-1s: Min width 1 (Right padding): ab
+// %-2s: Min width 2 (Right padding): a b
+// %-3s: Min width 3 (Right padding): a  b
+// %-4s: Min width 4 (Right padding): a   b
+// %-5s: Min width 5 (Right padding): a    b
+
+/* Fill in the width margins with zeros. */
+fmt.printf("%%d  : Default int: %d\n", 1)
+fmt.printf("%%0d : Min width: %0d\n", 1)
+fmt.printf("%%01d: Min width: %01d\n", 1)
+fmt.printf("%%02d: Min width: %02d\n", 1)
+fmt.printf("%%03d: Min width: %03d\n", 1)
+fmt.printf("%%04d: Min width: %04d\n", 1)
+fmt.printf("%%05d: Min width: %05d\n", 1)
+// Output:
+// %d  : Default int: 1
+// %0d : Min width: 1
+// %01d: Min width: 1
+// %02d: Min width: 01
+// %03d: Min width: 001
+// %04d: Min width: 0001
+// %05d: Min width: 00001
+
+/* Fill in the precision with zeros. */
+fmt.printf("%%f : Default float: %f\n", 1.0)
+fmt.printf("%%.0f: Min precision 0: %.0f\n", 1.0)
+fmt.printf("%%.1f: Min precision 1: %.1f\n", 1.0)
+fmt.printf("%%.2f: Min precision 2: %.2f\n", 1.0)
+fmt.printf("%%.3f: Min precision 3: %.3f\n", 1.0)
+fmt.printf("%%.4f: Min precision 4: %.4f\n", 1.0)
+fmt.printf("%%.5f: Min precision 5: %.5f\n", 1.0)
+fmt.printf("%%.6f: Min precision 6: %.6f\n", 1.0)
+fmt.printf("%%.7f: Min precision 7: %.7f\n", 1.0)
+// Output:
+// %f : Default float: 1.000000
+// %.0f: Min precision 0: 1
+// %.1f: Min precision 1: 1.0
+// %.2f: Min precision 2: 1.00
+// %.3f: Min precision 3: 1.000
+// %.4f: Min precision 4: 1.0000
+// %.5f: Min precision 5: 1.00000
+// %.6f: Min precision 6: 1.000000
+// %.7f: Min precision 7: 1.0000000
+
+/* Fill in the width margin and the precision with zeros. */
+fmt.printf("%%f   : Default float: %f\n", 1.0)
+fmt.printf("%%6.0f: Min width 6 precision 0: %6.0f\n", 1.0)
+fmt.printf("%%6.1f: Min width 6 precision 1: %6.1f\n", 1.0)
+fmt.printf("%%6.2f: Min width 6 precision 2: %6.2f\n", 1.0)
+fmt.printf("%%6.3f: Min width 6 precision 3: %6.3f\n", 1.0)
+fmt.printf("%%6.4f: Min width 6 precision 4: %6.4f\n", 1.0)
+fmt.printf("%%6.5f: Min width 6 precision 5: %6.5f\n", 1.0)
+fmt.printf("%%6.6f: Min width 6 precision 6: %6.6f\n", 1.0)
+// Output:
+// %f   : Default float: 1.000000
+// %6.0f: Min width 6 precision 0:      1
+// %6.1f: Min width 6 precision 1:    1.0
+// %6.2f: Min width 6 precision 2:   1.00
+// %6.3f: Min width 6 precision 3:  1.000
+// %6.4f: Min width 6 precision 4: 1.0000
+// %6.5f: Min width 6 precision 5: 1.00000
+// %6.6f: Min width 6 precision 6: 1.000000

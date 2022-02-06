@@ -73,3 +73,32 @@ walk = func(k, v) {
 enum.each(map, walk)
 
 fmt.println("each(map):", map)
+
+// Output:
+// each(array):[2, 4, 6, 8, 10, 12, 14]
+// each(map):{one: 2, two: 4, three: 6, four: 8}
+
+// ----------------------------------------------------------------------------
+//  enum.filter
+// ----------------------------------------------------------------------------
+
+filter := func(k, v) {
+    return v % 2 == 0
+}
+
+// Array
+arr = [1, 2, 3, 4, 5, 6, 7]
+
+filtered := enum.filter(arr, filter)
+fmt.println("filter(array):", filtered)
+
+// Map
+map = {"one": 1, "two": 2, "three": 3, "four": 4}
+
+filtered = enum.filter(map, filter)
+fmt.println("filter(map):", filtered)
+
+
+// Output:
+// filter:[2, 4, 6]
+

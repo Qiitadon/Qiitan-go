@@ -5,10 +5,13 @@
 
 ## 目次
 
-* [Qiitan スクリプト・ファイル](./specs/001_language_syntax/001_scrip_file.md#qiitan-スクリプトファイル)
+* [スクリプト・ファイル](./specs/001_language_syntax/001_scrip_file.md#スクリプトファイル)
   * [ファイル・フォーマット](./specs/001_language_syntax/001_scrip_file.md#ファイルフォーマット)
-  * [文字コード](./specs/001_language_syntax/001_scrip_file.md#文字コード)
+    * [文字コード](./specs/001_language_syntax/001_scrip_file.md#文字コード)
+    * [改行コード](./specs/001_language_syntax/001_scrip_file.md#改行コード)
+    * [拡張子](./specs/001_language_syntax/001_scrip_file.md#拡張子)
   * [ファイルのアクセス権](./specs/001_language_syntax/001_scrip_file.md#ファイルのアクセス権)
+  * [ファイルの実行](./specs/001_language_syntax/001_scrip_file.md#ファイルの実行)
 
 * [値と型](./specs/001_language_syntax/002_values_and_types.md#値と型)
   * [Qiitan スクリプトで使える型の一覧](./specs/001_language_syntax/002_values_and_types.md#qiitan-スクリプトで使える型の一覧)
@@ -42,6 +45,10 @@
 * [enum](./modules_tengo/enum.md#enum)
   * [all](./modules_tengo/enum.md#all)
   * [any](./modules_tengo/enum.md#any)
+  * [chunk](./modules_tengo/enum.md#chunk)
+  * [at](./modules_tengo/enum.md#at)
+  * [each](./modules_tengo/enum.md#each)
+  * [filter](./modules_tengo/enum.md#filter)
 * [fmt](./modules_tengo/fmt.md#fmt)
 * [hex](./modules_tengo/hex.md#hex)
 * [json](./modules_tengo/json.md#json)
@@ -65,6 +72,9 @@
 
 「キーたん語」の言語仕様もしくは「qiitan スクリプト」の構文など、仕様の中で使われる用語の定義と説明です。（順不順）
 
+* [enumerable](./index/-able.md#enumerable)
+* [iterable](./index/-able.md#iterable)
+* [mutable/immutable](./index/-able.md#mutableimmutable)
 * [組み込み関数](./index/built_in_functions.md#組み込み関数)
 * [バイトコードとコンパイル](./index/bytecode_compile.md#バイトコードとコンパイル)
 * [qiitan インタプリタ](./index/interpreter.md#qiitan-インタプリタ)

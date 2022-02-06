@@ -384,7 +384,7 @@ func getPathExample(t *testing.T, nameFile ...string) string {
 	t.Helper()
 
 	pathTmp := filepath.Join(nameFile...)
-	pathTmp = filepath.Join("../../examples/", pathTmp)
+	pathTmp = filepath.Join("../../docs/examples/", pathTmp)
 
 	pathFile, err := filepath.Abs(pathTmp)
 	require.NoError(t, err)
