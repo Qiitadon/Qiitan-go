@@ -13,14 +13,18 @@
   * [ファイルのアクセス権](./specs/001_language_syntax/001_scrip_file.md#ファイルのアクセス権)
   * [ファイルの実行](./specs/001_language_syntax/001_scrip_file.md#ファイルの実行)
 
-* [値と型](./specs/001_language_syntax/002_values_and_types.md#値と型)
-  * [Qiitan スクリプトで使える型の一覧](./specs/001_language_syntax/002_values_and_types.md#qiitan-スクリプトで使える型の一覧)
-    * [immutable](./specs/001_language_syntax/002_values_and_types.md#immutable)
-    * [error](./specs/001_language_syntax/002_values_and_types.md#error)
-    * [undefined](./specs/001_language_syntax/002_values_and_types.md#undefined)
+* [型（type）](./specs/001_language_syntax/002_type.md#型type)
+  * [Qiitan スクリプトで使える型の一覧](./specs/001_language_syntax/002_type.md#qiitan-スクリプトで使える型の一覧)
 
-* [文（statement）、式（expression）、値（value）](./specs/001_language_syntax/003_else.md#文statement式expression値value)
+* [文 (statement)](./specs/001_language_syntax/003_statement.md#文-statement)
 
+* [式 (expression)](./specs/001_language_syntax/004_expression.md#式-expression)
+
+* [値 (value)](./specs/001_language_syntax/005_value.md#値-value)
+
+* [immutable](./specs/001_language_syntax/999_values_and_types.md#immutable)
+* [error](./specs/001_language_syntax/999_values_and_types.md#error)
+* [undefined](./specs/001_language_syntax/999_values_and_types.md#undefined)
 
 * [組み込み関数（Built\-in Functions）](./specs/002_builtin_functions.md#組み込み関数built-in-functions)
 
@@ -50,6 +54,9 @@
   * [each](./modules_tengo/enum.md#each)
   * [filter](./modules_tengo/enum.md#filter)
 * [fmt](./modules_tengo/fmt.md#fmt)
+  * [print](./modules_tengo/fmt.md#print)
+  * [println](./modules_tengo/fmt.md#println)
+  * [printf](./modules_tengo/fmt.md#printf)
 * [hex](./modules_tengo/hex.md#hex)
 * [json](./modules_tengo/json.md#json)
 * [math](./modules_tengo/math.md#math)

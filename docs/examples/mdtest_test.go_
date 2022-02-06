@@ -44,14 +44,12 @@ func Test_main_no_arg(t *testing.T) {
 }
 
 func TestGetListScript(t *testing.T) {
-	pathFile := "./README.md"
+	pathFile := "./unknown"
 
 	listScript, err := GetListScript(pathFile)
-	require.NoError(t, err)
+	require.Error(t, err)
 
 	t.Log(util.FmtStructPretty(listScript))
-
-	t.Fail()
 }
 
 func TestRunScript(t *testing.T) {
