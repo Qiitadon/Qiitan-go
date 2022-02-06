@@ -1,4 +1,4 @@
-<!-- markdownlint-disable MD041 -->
+<!-- markdownlint-disable MD041 MD031 MD033 MD007 -->
 > - <sub><sup><a href="https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png">キーたん（Qiitan）</a>は、<a href="https://qiita.com/">Qiita</a><sup>™️</sup> の SNS である「<a href="https://qiitadon.com/">Qiitadon</a><sub><sup><sup>β</sup></sup></sub>」のマスコット・キャラクターです。</sup></sub>
 > - <sub><sup>`Qiitan-go` は非公認の Qiitan のファン・アプリです。<a href="https://qiita.com/">Qiita</a><sup>™️</sup> とは一切関係がありません。</sup></sub>
 
@@ -31,10 +31,12 @@ Hello World!
 ```
 
 - スクリプトの簡易説明（`./hello_world.qiitan`）
+
     ```go
     foo := import("fmt")
     foo.println("Hello World!")
     ```
+
     - この qiitan スクリプトは、標準モジュール（`qiitan` インタプリタに同梱されているモジュール）から `fmt` モジュールを `foo` に代入し、その `fmt` モジュール内で定義されている `println` 関数（改行付き `print` 関数）を呼び出して標準出力に出力しています。
 
 ### 対話モード（[REPL](https://ja.wikipedia.org/wiki/REPL)）での実行例
