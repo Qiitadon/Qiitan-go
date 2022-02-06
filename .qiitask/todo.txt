@@ -1,7 +1,10 @@
+基本構文および標準モジュールのドキュメントを埋める +docs
 インタプリタのコマンドを flag パッケージベースから Cobra に変更 +main
 /gen/gen_scrmods.go のカバレッジ
 SHA-3 および BLAKE3 の実装 +hash
 qiitan スクリプトのシンタックス・ハイライトの VSCode 拡張（/.vscode/extensions/)を個別リポジトリとして独立させる +vscode
+Markdown ファイルのコードブロックからテストを実行する（go ならスルー、golang なら実行、など） +docs
+/examples 内のサンプルコードの動作検証をする方法を考える +docs
 /examples を /docs に自動ドキュメント化を考える（go generate） +docs
 
 x 2021-01-12 /docs/README.md -> index.md に変更

@@ -1,0 +1,104 @@
+// ============================================================================
+//  Enum module sample.
+// ============================================================================
+fmt := import("fmt")
+enum := import("enum")
+
+// ----------------------------------------------------------------------------
+//  enum.all
+// ----------------------------------------------------------------------------
+arr := [1, 2, 3, 4, 5]
+
+validator := func(key, value){
+    return value < 6
+}
+
+fmt.println("all:", enum.all(arr, validator))
+// Output:
+// all:true
+
+// ----------------------------------------------------------------------------
+//  enum.any
+// ----------------------------------------------------------------------------
+arr = [1, 2, 3, 4, 5]
+
+validator = func(key, value){
+    return value == 3
+}
+
+fmt.println("any:", enum.any(arr, validator))
+// Output:
+// any:true
+
+// ----------------------------------------------------------------------------
+//  enum.chunk
+// ----------------------------------------------------------------------------
+arr = [1, 2, 3, 4, 5, 6, 7]
+size := 5
+
+fmt.println("chunk:", enum.chunk(arr, size))
+// Output:
+// chunk:[[1, 2, 3, 4, 5], [6, 7]]
+
+// ----------------------------------------------------------------------------
+//  enum.at
+// ----------------------------------------------------------------------------
+arr = ["zero", "one", "two", "three", "four", "five"]
+index := 3
+
+fmt.printf("at:%v (arr --> %v)\n", enum.at(arr, index), arr)
+// Output:
+// at:"three" (arr --> ["zero", "one", "two", "three", "four", "five"])
+
+// ----------------------------------------------------------------------------
+//  enum.each
+// ----------------------------------------------------------------------------
+
+// Array
+arr = [1, 2, 3, 4, 5, 6, 7]
+
+walk := func(k, v) {
+    arr[k] = v*2
+}
+enum.each(arr, walk)
+
+fmt.println("each(array):", arr)
+
+// Map
+map := {"one": 1, "two": 2, "three": 3, "four": 4}
+
+walk = func(k, v) {
+    map[k] = v*2
+}
+enum.each(map, walk)
+
+fmt.println("each(map):", map)
+
+// Output:
+// each(array):[2, 4, 6, 8, 10, 12, 14]
+// each(map):{one: 2, two: 4, three: 6, four: 8}
+
+// ----------------------------------------------------------------------------
+//  enum.filter
+// ----------------------------------------------------------------------------
+
+filter := func(k, v) {
+    return v % 2 == 0
+}
+
+// Array
+arr = [1, 2, 3, 4, 5, 6, 7]
+
+filtered := enum.filter(arr, filter)
+fmt.println("filter(array):", filtered)
+
+// Map
+map = {"one": 1, "two": 2, "three": 3, "four": 4}
+
+filtered = enum.filter(map, filter)
+fmt.println("filter(map):", filtered)
+
+
+// Output:
+// filter:[2, 4, 6]
+

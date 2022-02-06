@@ -40,6 +40,11 @@ modules_tengo="$(gh-md-toc --depth=2 --hide-footer --hide-header --serial $(find
 # shellcheck disable=SC2046
 modules_qiitan="$(gh-md-toc --depth=2 --hide-footer --hide-header --serial $(find ./modules_qiitan -name '*.md' | sort) | sed '/^$/d')"
 
+
+# ./index/* 下の Markdown の目次一覧を取得
+# shellcheck disable=SC2046
+index="$(gh-md-toc --depth=2 --hide-footer --hide-header --serial $(find ./index -name '*.md' | sort) | sed '/^$/d')"
+
 {
     # タイトル追記
     printf "# Qiitan スクリプトの言語仕様\n\n"
@@ -48,7 +53,7 @@ modules_qiitan="$(gh-md-toc --depth=2 --hide-footer --hide-header --serial $(fin
 
     # ./specs/* 下の Markdown の目次一覧を追記
     # shellcheck disable=SC2046
-    gh-md-toc --depth=2 --hide-footer --hide-header --serial $(find ./specs -name '*.md' | sort)
+    gh-md-toc --depth=3 --hide-footer --hide-header --serial $(find ./specs -name '*.md' | sort)
 
     # ./modules_tengo/* 下の Markdown の目次一覧を追記
     printf "## モジュール\n\n"
@@ -56,6 +61,11 @@ modules_qiitan="$(gh-md-toc --depth=2 --hide-footer --hide-header --serial $(fin
     printf "%s\n\n" "${modules_tengo}"
     printf "### qiitan 独自モジュール\n\n"
     printf "%s\n\n" "${modules_qiitan}"
+
+    # ./index/* 下の Markdown の目次一覧を追記
+    printf "## 用語集\n\n"
+    printf "「キーたん語」の言語仕様もしくは「qiitan スクリプト」の構文など、仕様の中で使われる用語の定義と説明です。（順不順）\n\n"
+    printf "%s\n\n" "${index}"
 
     # フッターの追記
     echo "${HR}"

@@ -1,0 +1,29 @@
+// ============================================================================
+//  Base64 module sample.
+// ============================================================================
+fmt := import("fmt")
+base64 := import("base64")
+
+input := "012abcABC _/*=~.+-\\"
+
+// With padding
+fmt.println("encode:", base64.encode(input))
+fmt.println("decode:", base64.decode("MDEyYWJjQUJDIF8vKj1+ListXA=="))
+fmt.println("url encode:", base64.url_encode(input))
+fmt.println("url decode:", base64.url_decode("MDEyYWJjQUJDIF8vKj1-ListXA=="))
+
+// No padding
+fmt.println("raw encode:", base64.raw_encode(input))
+fmt.println("raw decode:", base64.raw_decode("MDEyYWJjQUJDIF8vKj1+ListXA"))
+fmt.println("raw url encode:", base64.raw_url_encode(input))
+fmt.println("raw url decode:", base64.raw_url_decode("MDEyYWJjQUJDIF8vKj1-ListXA"))
+
+// Output:
+// encode:MDEyYWJjQUJDIF8vKj1+ListXA==
+// decode:012abcABC _/*=~.+-\
+// url encode:MDEyYWJjQUJDIF8vKj1-ListXA==
+// url decode:012abcABC _/*=~.+-\
+// raw encode:MDEyYWJjQUJDIF8vKj1+ListXA
+// raw decode:012abcABC _/*=~.+-\
+// raw url encode:MDEyYWJjQUJDIF8vKj1-ListXA
+// raw url decode:012abcABC _/*=~.+-\

@@ -3,8 +3,9 @@ fib := import("fibonacci")
 fmt := import("fmt")
 
 fmt.println(fib.fib(35))  // Fibonacci
-fmt.println(fib.fibt(35)) // Fibonacci tail
+
+// For tail-call ver fibonacci function
+//fmt.println(fib.fibt(35))
 
 // Ouput:
-// 9227465
 // 9227465

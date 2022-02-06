@@ -5,6 +5,7 @@
 | Function |
 | :--: |
 | `is_error(object) bool` |
+| `copy` |
 
 ---
 

@@ -1,13 +1,14 @@
-<!-- markdownlint-disable MD041 -->
-
-> - [キーたん（Qiitan）](https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png)は [Qiita](https://qiita.com/)<sup>™️</sup> の SNS である「[Qiitadon](https://qiitadon.com/)<sub><sup><sup>β</sup></sup></sub>」のマスコット・キャラクターです。
-> - `Qiitan-go` は Qiitan のファン・アプリです。[Qiita](https://qiita.com/)<sup>™️</sup> とは一切関係がありません。
+<!-- markdownlint-disable MD041 MD031 MD033 MD007 -->
+> - <sub><sup><a href="https://github.com/increments/mastodon/blob/qiitadon/app/javascript/images/qiitadon-getting-started.png">キーたん（Qiitan）</a>は、<a href="https://qiita.com/">Qiita</a><sup>™️</sup> の SNS である「<a href="https://qiitadon.com/">Qiitadon</a><sub><sup><sup>β</sup></sup></sub>」のマスコット・キャラクターです。</sup></sub>
+> - <sub><sup>`Qiitan-go` は非公認の Qiitan のファン・アプリです。<a href="https://qiita.com/">Qiita</a><sup>™️</sup> とは一切関係がありません。</sup></sub>
 
 ---
 
-[![platform icon](https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qiitadon/Qiitan-go/releases/latest "view latest releases page")
-[![homebrew icon](https://img.shields.io/badge/homebrew-macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qiitadon/Qiitan-go#install "view latest releases page")
-[![MIT license](https://img.shields.io/github/license/Qiitadon/Qiitan-go)](https://github.com/Qiitadon/Qiitan-go/blob/main/LICENSE "view license page")
+[![platform icon](https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qithub-BOT/Qiitan-go/releases/latest "view latest releases page")
+[![homebrew icon](https://img.shields.io/badge/homebrew-macos%20%7C%20linux-blue "win,mac,linux")](https://github.com/Qithub-BOT/Qiitan-go#install "view latest releases page")
+[![MIT license](https://img.shields.io/github/license/Qithub-BOT/Qiitan-go)](https://github.com/Qithub-BOT/Qiitan-go/blob/main/LICENSE "view license page")
+
+- [`qiitan` インタプリタのインストール or ダウンロード](https://github.com/Qithub-BOT/Qiitan-go#install)
 
 # Qiitan-go<sub><sup><sup>alpha</sup></sup></sub>
 
@@ -17,17 +18,26 @@
 
 ### スクリプトと実行例
 
-- スクリプト例（`./helloworld.qiitan`）
+```shellsession
+$ # スクリプト
+$ cat ./hello_world.qiitan
+/* Hello World of Qiitan Script */
+foo := import("fmt")
+foo.println("Hello World!")
+
+$ # 実行
+$ qiitan ./helloworld.qiitan
+Hello World!
+```
+
+- スクリプトの簡易説明（`./hello_world.qiitan`）
+
     ```go
     foo := import("fmt")
     foo.println("Hello World!")
     ```
-    - この qiitan スクリプトは、標準モジュール（`qiitan` インタプリタに同梱されているライブラリ）から `fmt` モジュールを `foo` に代入し、その `fmt` モジュール内で定義されている `println` 関数（改行付き `print` 関数）を呼び出して標準出力に出力しています。
-- 実行例
-    ```shellsession
-    $ qiitan ./helloworld.qiitan
-    Hello World!
-    ```
+
+    - この qiitan スクリプトは、標準モジュール（`qiitan` インタプリタに同梱されているモジュール）から `fmt` モジュールを `foo` に代入し、その `fmt` モジュール内で定義されている `println` 関数（改行付き `print` 関数）を呼び出して標準出力に出力しています。
 
 ### 対話モード（[REPL](https://ja.wikipedia.org/wiki/REPL)）での実行例
 
@@ -75,8 +85,8 @@ LOG: <undefined> object returned. Perhaps the statement has no return or nothing
 
 キーたん語は、なんちゃってプリ・コンパイル型の言語です。
 
-`qiitan` スクリプトの実行だけでなく、その中間ファイル（バイトコード）を出力することができます。
-この中間ファイルも `qiitan` インタプリタで実行することができ、プリ・コンパイルが不要なぶんだけ速く実行されます。
+`qiitan` スクリプトの実行だけでなく、その中間ファイル（バイトコード）を出力することができ、この中間ファイルも `qiitan` インタプリタで実行することができます。
+`qiitan` スクリプトが複数ファイルに分割されている場合、1 つのファイルとして配布したい場合に便利です。（速度は大して変わりません）
 
 ```shellsession
 $ qiitan -compile ./helloworld.qiitan
@@ -102,8 +112,12 @@ Hello World!
     ```bash
     brew install Qiitadon/apps/qiitan
     ```
-- 単体バイナリ（Windows, macOS, Linux）
-    - [Releases ページ](https://github.com/Qiitadon/Qiitan-go/releases/latest)から該当 OS + アーキテクチャをダウンロード。
+
+- 手動インストール（Windows, macOS, Linux）
+    - [Releases ページ](https://github.com/Qiitadon/Qiitan-go/releases/latest)
+    - `qiitan` インタプリタは単体バイナリです。リリース・ページから OS + アーキテクチャに該当するバイナリをダウンロードし、実行権限を与えてパスの通ったディレクトリに設置するだけで利用できます。
+    - macOS で「`Operation not permitted`」エラーが出る場合は、ターミナル・アプリにディスク・アクセスの権限が与えられていない可能性があります。
+        - [macOS の「Operation not permitted」を回避する（du/ls/mv/cp 実行時）](https://qiita.com/KEINOS/items/0366f1c281b574a79cfb) @ Qiita
 
 ---
 

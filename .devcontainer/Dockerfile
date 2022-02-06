@@ -21,4 +21,5 @@ RUN cd /tmp && \
     go install "github.com/d5/tengo/cmd/tengo@latest" && \
     go install "golang.org/x/lint/golint@latest" && \
     go install "github.com/ekalinin/github-markdown-toc.go/cmd/gh-md-toc@latest" && \
-    mkdir -p ~/.vscode-server/extensions
+    mkdir -p ~/.vscode-server/extensions && \
+    git config --global init.defaultBranch main
